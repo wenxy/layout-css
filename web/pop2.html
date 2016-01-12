@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>弹框样式</title>
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/beautify.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/layout.js"></script>
+</head>
+<body class="f-bg-eb">
+<div class="f-ly-wrap">
+    <div class="f-ly-relative f-bg-ff" >
+        <div rid="nav1" class="f-ft-size-16 f-h-48 f-lh-48 f-ft-color-35 f-word-ellipsis f-ly-padding-l-16 f-ly-padding-r-16 f-line-r-ea">
+            <a href="../index2.html" rid="logo-title"   top="0" left="16">
+                首页
+            </a>
+        </div>
+        <div rid="nav2" left="nav1>16" class="f-ft-size-16 f-h-48 f-lh-48  f-word-ellipsis">
+            <a href="#">弹框</a>
+        </div>
+
+        <div left="nav2>16" class="f-h-48 f-lh-48">
+            <img class="f-h-48 f-lh-48" src="../images/bread-split-r.png">
+        </div>
+
+        <div  rid="p-icon" class="f-img-28-28" top="10" bottom="10"  right="menu-icon>16"  >
+            <img src="../images/p-index-icon.png">
+        </div>
+        <div rid="menu-icon" class="f-img-28-28"  top="10" bottom="10" right="10" >
+            <img class="f-menu-click" src="../images/menu-icon.png">
+        </div>
+    </div>
+ </div>
+<div class="f-ly-menu f-lh-48 f-ly-column  f-bg-ff f-ft-color-35 f-ft-size-16 f-line-t-ea" style="display: none;">
+    <a href="#"><div col="33" class="f-ly-inlne f-ly-txt-center"><span style="display: inline-block;height: 30px;">游戏下载</span></div></a>
+    <div col="1px" class="f-ly-inlne f-bg-eb" style="width: 1px;height:20px;margin:14px 0px 14px 0;"></div>
+    <a href="#"><div col="33" class="f-ly-inlne f-ly-txt-center">礼包</div></a>
+    <div col="1px" class="f-ly-inlne f-bg-eb" style="width: 1px;height:20px;margin:14px 0px 14px 0;"></div>
+    <a href="#"><div col="33" class="f-ly-inlne f-ly-txt-center">攻略</div></a>
+</div>
+<div class="f-ly-mask f-bg-mask-00">
+</div>
+
+<div class="f-pop-1 f-bg-ff f-radius-2 f-ly-padding-r-16 f-ly-padding-l-16" style="height: 240px;">
+    <div class="f-h-48 f-lh-48 f-ft-size-18 f-ft-color-e05012 ">提示</div>
+    <div class="f-pop-line"></div>
+    <div class="f-pop-content f-ft-size-16 f-ft-color-35">您还没登陆游易帐号！</div>
+    <a class="f-pop-e0512-btn">马上注册拿优惠</a>
+    <div class="f-ly-relative">
+        <div class="f-pop-line-all-ea" top="16" left="-16"></div>
+    </div>
+    <div class="f-ly-relative">
+        <a class="f-ft-size-16 f-ft-color-AA" top="27">已有游易帐号>></a>
+        <a class="f-ly-btn-white-e05012" right="0" top="16">直接下载</a>
+    </div>
+</div>
+</body>
+<script>
+    $(function () {
+        var pWidth=$(".f-pop-1").outerWidth();
+        $(".f-pop-line-all-ea").css("width",pWidth);
+    });
+    $(window).resize(function(){
+        var pWidth=$(".f-pop-1").outerWidth();
+        $(".f-pop-line-all-ea").css("width",pWidth);
+    });
+
+    setTimeout(function(){
+
+    },500);
+</script>
+</html>

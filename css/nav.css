@@ -1,0 +1,39 @@
+/*科e互联特效基本框架CSS*/
+/*科e互联特效基本框架CSS结束，应用特效时，以上样式可删除*/
+/* 效果CSS开始 */
+
+
+
+
+
+.lavalamp {
+    position: relative;
+    /*border: 1px solid #d6d6d6;*/
+    background: #fff;
+    /* -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+     -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+    border-radius : 10px;
+     -moz-border-radius : 10px;
+     -webkit-border-radius : 10px;
+     background : -webkit-gradient(linear, left top, left bottom, from(rgb(240,240,240)), to(rgb(204,204,204)));
+     background : -moz-gradient(linear, left top, left bottom, from(rgb(240,240,240)), to(rgb(204,204,204)));
+     */
+    height: 80px;
+    line-height: 80px;
+}
+.floatr {
+    position: absolute;
+    top: 0;
+    z-index: 500;
+    width: 70px;
+    height: 2px;
+    background: #e05012;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+}
+.active{
+
+}
+/* 效果CSS结束 */
+
+

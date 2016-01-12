@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>手机验证页面</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/layout.js"></script>
+</head>
+<body>
+
+<div class="f-ly-bread-1">
+    <div class="f-ly-bread-item-1"><a href="../index.html">首页</a></div>
+    <div class="f-ly-bread-item-2"><a href="#">验证</a><img src="../images/bread-split-r.png" /></div>
+    <div class="f-ly-menu-r-1"><a href="#"><img src="../images/menu-icon.png"></a></div>
+    <div class="f-ly-menu-r-2"><a href="#"><img src="../images/p-index-icon.png"></a></div>
+    <div class="f-ly-more-1" style="display: none;">
+        <ul>
+            <li class="f-vline-r-1">游戏下载</li>
+            <li class="f-vline-r-1">礼包</li>
+            <li >攻略</li>
+        </ul>
+    </div>
+</div>
+
+<div class="f-ly-wrap">
+    <div class="f-ly-title-1">
+        <span class="f-ft-title-1">为了保障您的资金安全，修改支付宝账号需要绑定手机！</span>
+    </div>
+    <div class="f-ly-input-1">
+        <input class="f-input-1 " type="text" placeholder="请填写手机号码">
+    </div>
+    <div class="f-ly-btn-1">
+        <a href="input_vcode.html" class="f-btn-a-1"><span class="f-ft-bt-1">下一步</span></a>
+    </div>
+</div>
+
+<div class="f-ly-tips-mask">
+</div>
+<div class="f-ly-tips-wrap-2">
+    <div class="f-ly-tips-2">
+        <div  class="f-ly-tips-title-1"><span>提示</span></div>
+        <div  class="f-ly-tips-line-1"></div>
+        <div  class="f-ly-tips-content-1">
+            <span>此手机号已经绑定手机，若换绑将可能造成原有号码不可登陆</span></div>
+    </div>
+    <div  class="f-ly-tips-btn-1">
+        <a href="#" class="f-btn-tips-l-1 cancel"><span >取消</span></a>
+        <a href="#" class="f-btn-tips-r-1"><span >确认换绑</span></a>
+    </div>
+</div>
+
+<script>
+    $(".cancel").click(function(){
+        $(".f-ly-tips-mask").hide();
+        $(".f-ly-tips-wrap-2").hide()
+    });
+</script>
+</body>
+</html>

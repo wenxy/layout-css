@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>游戏详情页</title>
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/beautify.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/jquery.slideBox.js"></script>
+    <style>
+        .f-ly-mask-game{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width:100%;
+            height: 92px;
+            line-height: 92px;
+            text-align: center;
+        }
+        .f-bg-mask-00{
+            background-color: #000;
+            filter:alpha(opacity=80);
+            -moz-opacity:0.8;
+            -khtml-opacity:0.8;
+            opacity:0.8;
+        }
+        .f-ly-banner-1{
+            position: relative;
+            width: 100%;
+            height: 624px;
+            background-image: url("../images/2_banner.jpg") ;
+            margin-top:0px;
+            margin-right:0px;
+            margin-bottom:0px;
+            margin-left:0px;
+            background-repeat:no-repeat;
+            background-position:top;
+        }
+        .slideBox img{
+            width: 586px;
+            height: 228px;
+            overflow: hidden;
+        }
+
+        .f-tab-menu li a{
+            color: #aaaaaa;
+        }
+
+        .f-play{
+            width: 182px;
+            height: 114px;
+            line-height: 114px;
+            background: url("../images/b-play.png") no-repeat  ;
+            cursor: pointer;
+        }
+        .f-play.hover{
+            width: 182px;
+            height: 114px;
+            line-height: 114px;
+            background: url("../images/b-play-act.png") no-repeat  ;
+            cursor: pointer;
+        }
+
+        .f-pop-2{
+            position: fixed;
+            margin: auto;
+            left: 50%;
+            top: 50%;
+            margin-left: -255px;
+            margin-top: -249px;
+            right: 0;
+            bottom: 0;
+            width: 510px;
+            height: 495px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            z-index: 9999;display: none;
+        }
+        .f-video-mask{
+            position: fixed;
+            top:0;
+            left: 0;
+            width:100%;
+            height:100%;
+            text-align: center;
+            z-index: 999;
+            display: none;
+        }
+        .download-button{
+            text-decoration:none;
+            border:1px solid #00d41b;
+            padding: 0.4em 2.5em;
+            color:white;
+            font-size: 14px;
+            border-radius: 16px;
+            letter-spacing: 2px;
+            background-color:#00d41b;
+            display: block;
+            text-align: center;
+        }
+
+        .f-ly-column a:hover{
+            text-decoration: underline;
+        }
+
+        .headerAct{
+            border-top: 2px solid #e05012;
+            height: 78px;
+        }
+    </style>
+
+
+</head>
+<body style="background-color: #22202B;" class="">
+<div class="f-ly-init" style="z-index: 999999;"></div>
+<div id="header" style="height: 80px;background: #FFF;" >
+    <div style="font-size: 16px;color: #353535;width: 1000px;position: relative;">
+        <div  style="position:absolute;display: inline-block;width: 187px;height: 80px;border-right: 1px solid #EAEAEA;">
+            <a href="http://youyi123.cn"><img style="padding-top: 20px;" src="../images/b-logo.png" title="游易"></a>
+        </div>
+        <ul style="margin: 0; padding: 0;position: absolute;left: 187px;display:inline-block;z-index: 300;height: 80px;line-height: 80px;">
+                <li style="list-style: none;float:left; text-align: center;border-right: 1px solid #EAEAEA;" class="headerAct">
+                    <a style="padding: 0 20px; text-align: center;display:inline-block;height: 80px;"   href="http://www.internetke.com">
+                        首页
+                    </a>
+                </li>
+                <li style="list-style: none;float:left;text-align: center;border-right: 1px solid #EAEAEA;" class="">
+                    <a style="padding: 0 20px; text-align: center;display:inline-block;height: 80px;"    href="http://www.internetke.com">
+                        游戏下载
+                    </a>
+                </li>
+        </ul>
+        <div style="right:20px;font-size: 14px;color: #353535;position:absolute;height: 80px;line-height: 80px;">
+            您好<a style="color:#265a88;cursor: pointer;">Fish</a>，欢迎来到游易！
+            <span style="color: #EAEAEA;">|</span>
+            <a style="cursor: pointer;">登录</a>
+            <span style="color: #EAEAEA;">|</span>
+            <a style="cursor: pointer;">注销</a>
+            <span style="color: #EAEAEA;">|</span>
+            <a style="cursor: pointer;">注册</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="f-ly-banner-1">
+    <div class="f-bg-mask-00" style="height: 92px;width: 100%;top:532px;position: absolute;"></div>
+</div>
+    <div class="f-ly-relative" height="1" style="width:1000px;z-index: 9;">
+        <div rid="scanImg" top="-128" h="left" style="height: 108px;width: 108px;overflow: hidden;">
+            <img  style="height: 108px;width: 108px;" src="../images/download-scan.png">
+        </div>
+        <div   left="scanImg>20"  top="-72"   style="height: 19px;width: 208px;overflow: hidden;">
+            <img src="../images/b-scan-tips.png">
+        </div>
+        <div rid="scanImgTip"  left="scanImg>50"  top="-78"   style="height: 26px;width: 208px;overflow: hidden;">
+            <span class="f-ft-size-20 f-ft-color-AA">扫一扫下载打塔传奇</span>
+        </div>
+        <div  left="scanImg>20"  top="scanImgTip>3"   style="height: 67px;">
+            <span class="f-ft-color-ff f-ft-size-24" style="font-weight: bold;">拒绝首充号，游戏内充值6折</span>
+        </div>
+        <div rid="downBtn"  left="scanImg>360"  top="-72" style="height: 52px;width: 192px;">
+            <img id="downloadBtn"  src="../images/b-down-btn-bg.png">
+        </div>
+        <div rid="gameIcon"  left="downBtn>40"  top="-72"  style="height: 52px;width: 52px;overflow: hidden;">
+            <img  style="height: 52px;width: 52px;" src="../images/daota_icon.jpg">
+        </div>
+
+        <div rid="gameTitle" col="2" class="" left="gameIcon>10" top="-60"  >
+            <p class="f-ft-color-ff f-ft-size-18" style="line-height: 15px;">刀塔传奇</p>
+            <p class="f-ft-color-AA f-ft-size-12">
+                <span>动作卡牌</span>
+                <span>|</span>
+                <span>公测</span>
+                <span>|</span>
+                <span>241.9M</span>
+            </p>
+        </div>
+    </div>
+   <div class="f-ly-wrap-fix" style="margin-top: 61px;height:228px;">
+       <div class="f-ly-column" style="height: 228px;">
+           <div col="586px">
+               <div class="f-ly-relative">
+                   <div class="slideBox">
+                       <ul class="items">
+                           <li><a href="http://www.jq22.com/"><img src="../images/scree_1.png"></a></li>
+                           <li><a href="http://www.jq22.com/"><img src="../images/scree_2.png"></a></li>
+                           <li><a href="http://www.jq22.com/"><img src="../images/scree_3.png"></a></li>
+                       </ul>
+                   </div>
+               </div>
+           </div>
+
+           <div col="414px" style="background-color:  #3D3B46;margin-left: 20px;height: 228px;">
+               <div  class="f-tab" mouse-event="mouseover" style="width: 374px;height: 214px; margin: 0 10px 14px 10px;">
+                   <div height="49" class="f-tab-menu-box f-ft-size-16 " style="width: 100%;">
+                       <ul class="f-tab-menu " >
+                           <li lineHeight="49"  style="width: 50px;color: #FFFFFF;" index="0" class="hover" ><a  class="" href="javascript:void(0)">最新</a></li>
+                           <li style="width: 50px;" index="1" ><a href="javascript:void(0)">新闻</a></li>
+                           <li style="width: 50px;" index="2"><a href="javascript:void(0)">公告</a></li>
+                           <li style="width: 50px;" index="3"><a href="javascript:void(0)">攻略</a></li>
+                           <li style="width: 150px;text-align: right;" index="-1"><a href="javascript:void(0)">更多</a></li>
+                       </ul>
+                   </div>
+                   <div class="f-tab-main-box" style="width: 374px;">
+                       <div class="f-tab-main" style="width: 374px;">
+                           <div>
+                               <div class="f-ly-column " style="width: 354px; margin: 14px 10px 0 10px;" >
+                                       <div col="60px"> <span class="f-ft-size-14 f-ft-color-AA" href="#">【新闻】</span></div>
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA">
+                                           <a class="f-ft-size-14 f-ft-color-AA" href="#">
+                                               我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题
+                                           </a>
+                                       </div>
+
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                               <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【新闻】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                               <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【攻略】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                               <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【新闻】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                               <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【公告】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                           </div>
+
+
+                           <!--新闻-->
+                           <div>
+                               <div class="f-ly-column " style="width: 354px; margin: 14px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【新闻】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                               <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【新闻】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                               <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【新闻】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                               <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【新闻】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                               <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【新闻】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                           </div>
+                           <!--公告-->
+                           <div>
+                               <div class="f-ly-column " style="width: 354px; margin: 14px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【公告】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                               <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【公告】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                               <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【公告】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                               <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【公告】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                               <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【公告】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                           </div>
+                           <!--攻略-->
+                           <div>
+                               <div class="f-ly-column " style="width: 354px; margin: 14px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【攻略】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                               <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【攻略】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                               <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【攻略】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                               <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【攻略】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                               <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                   <a href="#">
+                                       <div col="60px"><span class="f-ft-size-14 f-ft-color-AA" >【攻略】</span></div>
+                                   </a>
+                                   <a href="#">
+                                       <div col="245px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA"><span>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</span></div>
+                                   </a>
+                                   <div col="45px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;"><span>10-22</span></div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+<!--第二部分视频区域-->
+<div class="f-ly-wrap-fix " style="margin-top: 20px;height:228px;">
+    <div class="f-ly-column" style="height: 228px;">
+        <div col="586px" style="background-color:  #3D3B46;height: 228px;">
+            <div  class="f-tab"  style="width: 566px;height: 214px; margin: 0 10px 14px 10px;">
+                <div height="49" class="f-tab-menu-box f-ft-size-16 " style="width: 100%;">
+                    <ul class="f-tab-menu " >
+                        <li lineHeight="49"  style="width: 70px;color: #FFFFFF;cursor: default;" index="-1" class="hover" >
+                            <a href="javascript:void(0)">视频中心</a></li>
+                    </ul>
+                </div>
+                <div class="f-tab-main-box" style="width: 566px;">
+                    <div class="f-tab-main" style="width: 566px;">
+                        <div>
+
+                            <div class="f-ly-column " style="width: 566px; margin: 14px 0 14px 0;" >
+                                <div col="182px" style="height: 114px;background:url('../images/scree_1.png') no-repeat;overflow: hidden;text-align: center;line-height: 114px;">
+                                        <div class="f-play animated " video-url="http://player.youku.com/embed/XMTM5NDM1MTM0NA=="> </div>
+                                </div>
+                                <div col="10px" style="height: 114px;"></div>
+                                <div col="182px" style="height: 114px;background:url('../images/scree_2.png') no-repeat;overflow: hidden;text-align: center;line-height: 114px;">
+                                    <div class="f-play animated " video-url="http://player.youku.com/embed/XMTM5NDQ5NjEyNA=="> </div>
+                                </div>
+                                <div col="10px" style="height: 114px;"></div>
+                                <div col="182px" style="height: 114px;background:url('../images/scree_3.png') no-repeat;overflow: hidden;text-align: center;line-height: 114px;">
+                                    <div class="f-play animated " video-url="http://player.youku.com/embed/XMTM5NDQxMTMwOA=="> </div>
+                                </div>
+                            </div>
+                            <div class="f-ly-column f-ft-size-14 f-ft-color-AA" style="width: 566px; margin-bottom:14px;text-align: center;" >
+                                <div col="182px" class="">·一周一个英雄全面评测·</div>
+                                <div col="10px" style="height: 114px;"></div>
+                                <div col="182px">·一周一个英雄全面评测·</div>
+                                <div col="10px" style="height: 114px;"></div>
+                                <div col="182px">·一周一个英雄全面评测·</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div col="414px" style="background-color:  #3D3B46;margin-left: 20px;height: 228px;">
+            <div  class="f-tab"  style="width: 374px;height: 214px; margin: 0 10px 14px 10px;">
+                <div height="49" class="f-tab-menu-box f-ft-size-16 " style="width: 100%;">
+                    <ul class="f-tab-menu " >
+                        <li lineHeight="49"  style="width: 40px;color: #FFFFFF;cursor: default;" index="-1" class="hover" ><a href="javascript:void(0)">礼包</a></li>
+                    </ul>
+                </div>
+                <div class="f-tab-main-box" style="width: 374px;">
+                    <div class="f-tab-main" style="width: 374px;">
+                        <div>
+                            <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                <a href="#">
+                                    <div col="90px"><span class="f-ft-size-14 f-ft-color-AA" >【刀塔传奇】</span></div>
+                                </a>
+                                <a href="#">
+                                    <div col="220px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA">
+                                        <span>
+                                        我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题
+                                    </span>
+                                    </div>
+                                </a>
+                                <div col="40px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;position:relative;">
+                                    <span class="f-gift-btn f-ft-size-12 f-ft-color-e05012 f-line-all-e05012 f-radius-4" style="padding: 2px 4px;">领取</span>
+                                </div>
+                            </div>
+                            <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                <a href="#">
+                                    <div col="90px"><span class="f-ft-size-14 f-ft-color-AA" >【刀塔传奇】</span></div>
+                                </a>
+                                <a href="#">
+                                    <div col="220px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA">
+                                        <span>
+                                        我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题
+                                    </span>
+                                    </div>
+                                </a>
+                                <div col="40px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;">
+                                    <span class="f-gift-btn f-ft-size-12 f-ft-color-e05012 f-line-all-e05012 f-radius-4" style="padding: 2px 4px;">领取</span>
+                                </div>
+                            </div>
+                            <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                <a href="#">
+                                    <div col="90px"><span class="f-ft-size-14 f-ft-color-AA" >【刀塔传奇】</span></div>
+                                </a>
+                                <a href="#">
+                                    <div col="220px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA">
+                                        <span>
+                                        我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题
+                                    </span>
+                                    </div>
+                                </a>
+                                <div col="40px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;">
+                                    <span class="f-gift-btn f-ft-size-12 f-ft-color-e05012 f-line-all-e05012 f-radius-4" style="padding: 2px 4px;">领取</span>
+                                </div>
+                            </div>
+                            <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                <a href="#">
+                                    <div col="90px"><span class="f-ft-size-14 f-ft-color-AA" >【刀塔传奇】</span></div>
+                                </a>
+                                <a href="#">
+                                    <div col="220px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA">
+                                        <span>
+                                        我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题
+                                    </span>
+                                    </div>
+                                </a>
+                                <div col="40px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;">
+                                    <span class="f-gift-btn f-ft-size-12 f-ft-color-e05012 f-line-all-e05012 f-radius-4" style="padding: 2px 4px;">领取</span>
+                                </div>
+                            </div>
+                            <div class="f-ly-column " style="width: 354px; margin: 9px 10px 0 10px;" >
+                                <a href="#">
+                                    <div col="90px"><span class="f-ft-size-14 f-ft-color-AA" >【刀塔传奇】</span></div>
+                                </a>
+                                <a href="#">
+                                    <div col="220px" class="f-word-ellipsis f-ft-size-14 f-ft-color-AA">
+                                        <span>
+                                        我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题
+                                    </span>
+                                    </div>
+                                </a>
+                                <div col="40px" class="f-ft-size-14 f-ft-color-AA" style="text-align: right;position: relative;">
+                                    <span class="f-gift-btn f-ft-size-12 f-ft-color-e05012 f-line-all-e05012 f-radius-4" style="padding: 2px 4px;">领取</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="f-ly-wrap-fix " style="margin-top: 20px;height:152px;border: 1px solid #3E3E3E;">
+    <div class="f-ly-column ">
+        <div col="30" style="margin: 40px 20px 40px 40px;height: 72px; ">
+              <div class="f-ly-relative">
+                    <div rid="scanImg" style="height: 72px;width: 72px;background-image: url('../images/download-scan.png');background-size: 72px 72px;">
+
+                    </div>
+                    <div  left="92" style="width: 50px;" >
+                        <span class="f-ft-size-14 f-ft-color-AA">游易</span>
+                    </div>
+                    <div  left="92" top="20" class="f-ft-size-14 f-ft-color-ff" style="width: 250px;" >
+                          微信<span class="f-ft-size-14 f-ft-color-AA">公众号：YOUYI123</span>
+                    </div>
+                    <div  left="92" top="45" class="f-ft-size-12 f-ft-color-AA" style="width: 250px;" >
+                       扫描立即关注
+                    </div>
+              </div>
+        </div>
+        <div col="30" style="margin: 40px 20px 40px 40px;height: 72px; ">
+            <div class="f-ly-relative">
+                <div rid="scanImg" style="height: 72px;width: 72px;">
+                    <img  style="height: 72px;width: 72px;" src="../images/download-scan.png">
+                </div>
+                <div  left="92" style="width: 50px;" >
+                    <span class="f-ft-size-14 f-ft-color-AA">游易</span>
+                </div>
+                <div  left="92" top="20" class="f-ft-size-14 f-ft-color-ff" style="width: 250px;" >
+                    QQ<span class="f-ft-size-14 f-ft-color-AA">群号：123456789</span>
+                </div>
+                <div  left="92" top="45" class="f-ft-size-12 f-ft-color-AA" style="width: 250px;" >
+                    扫描立即加群
+                </div>
+            </div>
+        </div>
+        <div col="40" style="margin: 40px 20px 40px 40px;height: 72px; ">
+            <div class="f-ly-relative">
+                <div rid="scanImg" top="0" style="height: 72px;width: 72px;">
+                    <div rid="scanImg" style="height: 72px;width: 72px;">
+                        <img  style="height: 72px;width: 72px;" src="../images/download-scan.png">
+                    </div>
+                </div>
+                <div  left="92"  class="f-ft-size-14 f-ft-color-ff" style="width: 180px;" >
+                    客服电话<span class="f-ft-size-14 f-ft-color-AA">：020-84158533</span>
+                </div>
+                <div  left="92" top="20" style="width: 200px;" >
+                    <span class="f-ft-size-14 f-ft-color-AA">BUG反馈、充值问题、建议提交</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="f-ly-wrap-fix f-ft-size-12 f-ft-color-AA over-pulse " style="margin-top: 142px;height:152px;text-align: center;line-height: 25px;">
+    <p>游易 2015 Copyright © 2015 Warthog. All Rights Reserved</p>
+    <p>粤ICP备15038461号</p>
+</div>
+
+
+<div class="f-video-mask f-bg-mask-00" style="">
+</div>
+<div class="f-video f-pop-2  f-radius-2 " style="">
+ </div>
+
+<div id="giftPaopao" style="position: fixed;display:none;z-index: 1000000;background-color: #007aff;">
+    <div style="position: relative;">
+        <div class="paopao" style="position:absolute; top: 32px;left: -209px;display: block;z-index:5555;" id="a-btn-strategy-${game?.id}-paopao">
+            <span class="bot" style="left: 208px;"></span>
+            <span class="top" style="left: 208px;"></span>
+            <table style="width: 300px; margin:10px; line-height: 20px;">
+                <tr>
+                    <a target="_blank"></a>
+                    <td style="width: 108px;">
+                        <img src="../images/download-scan.png"  style="width: 108px; height: 108px;" />
+                    </td>
+                    <td style="width: 150px;">
+                        <div>
+                            <span style="font-size:14px; color:#e05012">下载游易客户端获领取礼包！</span><br/>
+                            <span style="font-size:12px; color:#aaa">（点击下载或者扫一扫二维码下载游易客户端）</span>
+                            <div style="margin-top: 16px;"
+                                <a href="http://otherfiles.b0.upaiyun.com/app/youyi.apk" class="download-button">
+                                    点击下载
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    jQuery(function($){
+        $('.slideBox').slideBox({
+            duration : 0.3,//滚动持续时间，单位：秒
+            easing : 'linear',//swing,linear//滚动特效
+            delay : 5,//滚动延迟时间，单位：秒
+            hideClickBar : false,//不自动隐藏点选按键
+            clickBarRadius : 10
+        });
+    });
+    var maxW = -1;
+
+    $(".f-play").mouseover(function(i,oo){
+        $(this).addClass("hover");
+    });
+    $(".f-play").mouseout(function(i,oo){
+        $(this).removeClass("hover");
+        //$(this).addClass("fadeOut");
+       // $(this).removeClass("fadeOut");
+       // $(this).addClass("");
+    });
+    $(".f-play").click(function(){
+        var url = $(this).attr("video-url");
+        var close=' <div class="f-video-close f-ft-size-18 f-ft-color-AA" style="text-align: right;cursor: pointer;">关闭</div>';
+        var iframe = '<iframe height=498 width=510 src="'+url+'"frameborder=0 allowfullscreen></iframe>';
+        $(".f-video-mask").show();
+        $(".f-video").show();
+        $(".f-video").html(close+iframe);
+        $(".f-video-close").click(function(){
+            $(".f-video-mask").hide();
+            $(".f-video").hide();
+            $(".f-video").html('');
+        });
+    });
+    $(".f-gift-btn").css("cursor","pointer");
+    $(".f-gift-btn").each(function(i,o){
+        $(this).unbind("mouseover");
+        $(this).mouseover(function(){
+            var top = $(this).offset().top - $(window).scrollTop() - 10;
+            var left = $(this).offset().left - $(window).scrollLeft();
+            $("#giftPaopao").show();
+            $("#giftPaopao").css("top",top);
+            $("#giftPaopao").css("left",left);
+            $("#giftPaopao").addClass("animated fadeInDown");
+        });
+        $(this).mouseout(function(){
+           //  $("#giftPaopao").addClass("animated fadeOutDown");
+            //$("#giftPaopao").hide();
+        });
+    });
+
+    $("#giftPaopao").mousemove(function(){$("#giftPaopao").show();});
+    $("#giftPaopao").mouseout(function(){$("#giftPaopao").hide();});
+    $("#downloadBtn").css("cursor","pointer");
+    $("#downloadBtn").mouseover(function(){$(this).attr("src","../images/b-down-btn-bg-act.png");});
+    $("#downloadBtn").mouseout(function(){$(this).attr("src","../images/b-down-btn-bg.png");});
+
+    $("#header").find("li").each(function(){
+        $(this).unbind("mouseover");
+        $(this).mouseover(function(){
+            $(this).css("border-top","2px solid #e05012");
+            $(this).css("height","78");
+            $(this).find("a").css("color","#e05012");
+        });
+        $(this).mouseout(function(){
+            $(this).css("border-top","2px solid #FFFFFF");
+            $(this).css("height","78");
+            $(this).find("a").css("color","#353535");
+        });
+    });
+</script>
+</body>
+</html>

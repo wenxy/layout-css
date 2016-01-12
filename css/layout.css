@@ -1,0 +1,218 @@
+/**
+**布局相关的CSS
+**命名规则：.f-ly-开头
+**/
+@charset "utf-8";
+html {
+    -webkit-text-size-adjust: 100%;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td {
+    margin: 0 auto;
+    padding: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.f-ly-relative{
+    position: relative;
+}
+.f-ly-column{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.f-ly-column div{
+    display: inline-block;
+    float: left;
+}
+.f-ly-wrap{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.f-ly-wrap-fix{
+    width: 1000px;
+    height: 100%;
+    overflow: hidden;
+
+}
+.f-ly-mask{
+    position: fixed;
+    top:0;
+    left: 0;
+    width:100%;
+    height:100%;
+    text-align: center;
+}
+/**页面初始化遮罩**/
+.f-ly-init{
+    position: fixed;
+    top:0;
+    left: 0;
+    width:100%;
+    height:100%;
+    text-align: center;
+    background-color: #FFFFFF;
+    z-index: 9999;
+}
+/**margin*/
+.f-ly-margin-t-12{
+    margin-top: 12px;
+}
+.f-ly-margin-l-12{
+    margin-left: 12px;
+}
+.f-ly-margin-r-12{
+    margin-right: 12px;
+}
+.f-ly-margin-b-12{
+    margin-bottom: 12px;
+}
+
+.f-ly-margin-t-16{
+    margin-top: 16px;
+}
+.f-ly-margin-l-16{
+    margin-left: 16px;
+}
+.f-ly-margin-r-16{
+    margin-right: 16px;
+}
+.f-ly-margin-b-16{
+    margin-bottom: 16px;
+}
+
+.f-ly-margin-t-48{
+    margin-top: 48px;
+}
+
+.f-ly-margin-t-32{
+    margin-top: 32px;
+}
+.f-ly-margin-l-32{
+    margin-left: 32px;
+}
+.f-ly-margin-r-32{
+    margin-right: 32px;
+}
+.f-ly-margin-b-32{
+    margin-bottom: 32px;
+}
+
+.f-ly-margin-t-8{
+    margin-top: 8px;
+}
+.f-ly-margin-l-8{
+    margin-left: 8px;
+}
+.f-ly-margin-r-8{
+    margin-right: 8px;
+}
+.f-ly-margin-b-8{
+    margin-bottom: 8px;
+}
+
+.f-ly-margin-t-4{
+    margin-top: 4px;
+}
+.f-ly-margin-l-4{
+    margin-left: 4px;
+}
+.f-ly-margin-r-4{
+    margin-right: 4px;
+}
+.f-ly-margin-b-4{
+    margin-bottom: 4px;
+}
+
+.f-ly-margin-t-2{
+    margin-top: 4px;
+}
+.f-ly-margin-l-4{
+    margin-left: 4px;
+}
+.f-ly-margin-r-4{
+    margin-right: 4px;
+}
+.f-ly-margin-b-4{
+    margin-bottom: 4px;
+}
+
+.f-ly-padding-t-16{
+    padding-top: 16px;
+}
+.f-ly-padding-l-16{
+    padding-left: 16px;
+}
+.f-ly-padding-r-16{
+    padding-right: 16px;
+}
+.f-ly-padding-b-16{
+    padding-bottom: 16px;
+}
+
+.f-ly-padding-t-8{
+    padding-top: 8px;
+}
+.f-ly-padding-l-8{
+    padding-left: 8px;
+}
+.f-ly-padding-r-8{
+    padding-right: 8px;
+}
+.f-ly-padding-b-8{
+
+}
+
+.f-ly-padding-label{
+    padding: 7px 14px;
+    *padding:7px 14px;
+}
+.f-ly-padding-label-mobile{
+    padding: 5px 10px;
+    *padding:5px 10px;
+}
+.f-ly-padding-label-mobile-mini{
+    padding: 3px 8px;
+    *padding:3px 8px;
+}
+/* banner */
+.f-ly-banner{
+    text-align: center;
+}
+.f-ly-banner img{
+    overflow: hidden;
+    max-width:100%;
+    height:auto;
+}
+
+/*导航菜单*/
+.f-ly-menu{
+    height: 48px;
+}
+.f-ly-menu ul{
+    margin-top: 12px;
+}
+.f-ly-menu ul li{
+    display: inline-block;
+    float:left;
+    width: 100px;
+    text-align: center;
+}
+
+/**位置**/
+.f-ly-txt-center{
+    text-align: center;
+}
+.f-ly-txt-left{
+    text-align: left;
+}
+.f-ly-txt-right{
+    text-align: right;
+}
+/*display*/
+.f-ly-inlne{
+    display: inline-block;
+    float: left;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>账户管理</title>
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/beautify.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/layout.js"></script>
+</head>
+<body class="f-bg-eb" style="margin:0;padding: 0;overflow-x: hidden;">
+<div class="f-ly-init"></div>
+<div class="f-ly-wrap">
+    <div class="f-ly-relative f-bg-ff" >
+        <div rid="nav1" class="f-ft-size-16 f-h-48 f-lh-48 f-ft-color-35 f-word-ellipsis f-ly-padding-l-16 f-ly-padding-r-16 f-line-r-ea">
+            <a href="../index2.html" rid="logo-title"   top="0" left="16">
+                后台管理
+            </a>
+        </div>
+        <div rid="nav2" left="nav1>16" class="f-ft-size-16 f-h-48 f-lh-48  f-word-ellipsis">
+            <a href="#">账户管理</a>
+        </div>
+
+        <div left="nav2>16" class="f-h-48 f-lh-48">
+            <img class="f-h-48 f-lh-48" src="../images/bread-split-r.png">
+        </div>
+    </div>
+    <div class="f-ly-relative" height="100" style="background:url('../images/my-balance-bg.png') repeat-x ;">
+        <span rid="b1" h="center" top="15" class="f-ft-size-16 f-ft-color-ff"><strong>可提现金额（元）</strong></span>
+        <span rid="b2" h="center" top="b1>-10" class="f-ft-size-50 f-ft-color-ff"><strong>100.01</strong></span>
+    </div>
+</div>
+<div class="f-ly-wrap" style="margin-top: 16px;">
+    <div class="f-ly-column" >
+        <div col="50%" class="" style="padding-left: 16px;padding-bottom: 7px;">
+            <span class="f-ft-size-16 f-ft-color-8c8a8a">账号信息</span>
+        </div>
+        <div col="50%"  class="error-info"  style="padding-right: 16px;text-align: right;">
+            <span class="f-ft-size-12 f-ft-color-e05012">不满足提现条件，请先设置账号</span></br>dd</span>
+        </div>
+    </div>
+</div>
+<div class="f-ly-wrap f-bg-ff">
+    <form action="cash_get.html" id="saveAccount" method="post">
+    <div   class="f-ly-column ">
+        <div  col="16px" class="f-ly-relative" height="60" style="height: 60px;line-height: 60px;">
+        </div>
+        <div col="100%" class=" f-ly-relative f-line-b-ea" height="60"  style="height: 60px;">
+            <div  v="middle">
+                <p class="f-ft-size-14 f-ft-color-AA">姓名</p>
+            </div>
+            <div  v="middle" right="16" >
+                <input class="f-ft-size-16 f-ft-color-35" style="text-align: right;" type="text" placeholder="真实姓名"  value="" />
+            </div>
+        </div>
+    </div>
+    <div   class="f-ly-column ">
+        <div  col="16px" class="f-ly-relative" height="60" style="height: 60px;line-height: 60px;">
+        </div>
+        <div col="100%" class=" f-ly-relative" height="60"  style="height: 60px;">
+            <div  v="middle">
+                <p class="f-ft-size-14 f-ft-color-AA">支付宝账号</p>
+            </div>
+            <div  v="middle" right="16" >
+                <input class="f-ft-size-16 f-ft-color-35" style="text-align: right;" type="text" placeholder="支付宝账号"  value="" />
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+
+<div class="f-ly-wrap" style="margin-top: 16px;">
+    <div class="f-ly-column" >
+        <div col="80%" class="sms-tips" style="padding-left: 16px;padding-bottom: 7px;text-align: right;">
+            <span class="f-ft-size-12 f-ft-color-e05012">&nbsp;</span>
+        </div>
+        <div col="20%"  class="retry-sms-send"  style="padding-right: 16px;text-align: center;">
+            <span class="f-ft-size-12 f-ft-color-e05012 "></span>
+            <span class="f-ft-size-12 f-ft-color-e05012" style="cursor: pointer; border: 1px solid #e05012;border-radius: 2px;padding: 0 2px;"> 获取验证码 </span>
+        </div>
+    </div>
+</div>
+<div class="f-ly-wrap f-bg-ff" style="margin-top: 0px;">
+    <div   class="f-ly-column " style="">
+        <div  col="16px" class="f-ly-relative" height="60" style="height: 60px;line-height: 60px;">
+        </div>
+        <div col="100%" class=" f-ly-relative" height="60"  style="height: 60px;">
+            <div  v="middle" rid="smsLabel">
+                <p class="f-ft-size-14 f-ft-color-AA">短信验证码</p>
+            </div>
+            <div  v="middle" left="smsLabel>16" >
+                <input class="f-ft-size-16 f-ft-color-35" style="text-align: right;" type="text" placeholder="请输入短信验证码"  value="" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="f-ly-wrap" style="margin-top: 20px;">
+    <div class="f-ly-column">
+        <div class="save-account f-ly-btn-common   f-ft-size-18 f-ft-color-ff" col="50%" style="margin: 8px 8px 8px 16px;text-align: center;cursor: pointer;">保存信息</div>
+        <div class="apply-cash f-ly-btn-common f-ft-size-18 f-ft-color-ff f-ly-btn-disable" col="50%" style="margin: 8px 16px 8px 8px;text-align: center;cursor: pointer;">申请提现</div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+       var w =  $(".f-ly-column").width();
+       w = w - 110;
+       $("input").css("width",w+"px");
+       $("input")[0].focus();
+
+       $(".save-account").click(function(){
+             if( $($("input")[0]).val() == "" ){
+                 $(".error-info span").html("请填写真实姓名");
+                 return ;
+             }
+             if( $($("input")[1]).val() == "" ){
+               $(".error-info span").html("请填写支付宝账号");
+               return ;
+             }
+            $("#saveAccount").submit();
+       });
+
+        var spans = $(".retry-sms-send span");
+        $(spans[1]).click(function(){
+            $.post("sms_suc.json", function(data) {
+                if( data && data.success ){
+                    $($(".sms-tips span")[0]).html(data.data);
+                    $(spans[1]).hide();
+                    var sec = 10;
+                    var time = setInterval(function(){
+                        sec--;
+                        $(spans[0]).html(sec+"s");
+                        if( sec <=0 ){
+                            $(spans[0]).hide();
+                            $(spans[1]).show();
+                            clearInterval(time);
+                        }
+                    },1000);
+                }else{
+                    $($(".sms-tips span")[0]).html(data.errorMsg);
+                }
+            });
+
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>申请提现</title>
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/beautify.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/layout.js"></script>
+</head>
+<body class="f-bg-eb" style="margin:0;padding: 0;overflow-x: hidden;">
+<div class="f-ly-init"></div>
+<div class="f-ly-wrap">
+    <div class="f-ly-relative f-bg-ff" >
+        <div rid="nav1" class="f-ft-size-16 f-h-48 f-lh-48 f-ft-color-35 f-word-ellipsis f-ly-padding-l-16 f-ly-padding-r-16 f-line-r-ea">
+            <a href="../index2.html" rid="logo-title"   top="0" left="16">
+                后台管理
+            </a>
+        </div>
+        <div rid="nav2" left="nav1>16" class="f-ft-size-16 f-h-48 f-lh-48  f-word-ellipsis">
+            <a href="#">申请提现</a>
+        </div>
+
+        <div left="nav2>16" class="f-h-48 f-lh-48">
+            <img class="f-h-48 f-lh-48" src="../images/bread-split-r.png">
+        </div>
+    </div>
+
+</div>
+
+<div class="f-ly-wrap f-bg-ff" style="margin-top: 16px;">
+    <div   class="f-ly-column ">
+        <div  col="16px" class="f-ly-relative" height="60" style="height: 60px;line-height: 60px;">
+        </div>
+        <div col="100%" class=" f-ly-relative" height="60"  style="height: 60px;">
+            <div  v="middle">
+                <p class="f-ft-size-14 f-ft-color-AA">提现金额</p>
+            </div>
+            <div  v="middle" right="16" >
+                <input class="f-ft-size-16 f-ft-color-35" style="text-align: right;" type="text" placeholder="请输入提现金额"  value="" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="f-ly-wrap f-ft-size-12 f-ft-color-8c8a8a" style="margin: 12px 16px 20px 16px;">
+     小于100元，每笔收取0.5元手续费
+</div>
+<div class="f-ly-wrap" style="margin-top: 20px;">
+    <div class="f-ly-column">
+        <div class="f-ly-btn-common   f-ft-size-18 f-ft-color-ff" col="100%" style="margin: 8px 8px 8px 16px;text-align: center;cursor: pointer;">提 现</div>
+     </div>
+</div>
+<script>
+    $(document).ready(function(){
+       var w =  $(".f-ly-column").width(); 
+       w = w - 110;
+       $("input").css("width",w+"px");
+       $("input")[0].focus();
+        parseInt()
+    });
+</script>
+</body>
+</html>

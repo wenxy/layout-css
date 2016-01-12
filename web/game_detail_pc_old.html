@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>游戏详情页</title>
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/beautify.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/layout.js"></script>
+    <style>
+        /******/
+        .swiper-container {
+            width: 984px;
+            margin-top: 20px;
+            margin-bottom:20px ;
+        }
+        .swiper-slide {
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .swiper-slide{
+            height:400px;
+            width:200px;
+        }
+        .f-bg-mask-game{
+            background-color: #000;
+
+            background: -webkit-gradient(linear, 0 624, 0 100%, from(#010101), to(#1e2535));
+            background: -moz-linear-gradient(top, #010101, #1e2535);
+            filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#010101', endColorstr='#1e2535'); /* IE6,IE7 */
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#010101', endColorstr='#1e2535')"; /* IE8 */
+        }
+        .f-bg-mask-game-bottom{
+            background-color: #000;
+            filter:alpha(opacity=80);
+            -moz-opacity:0.8;
+            -khtml-opacity:0.8;
+            opacity:0.8;
+        }
+        .f-bottom-fix{
+            position: fixed;
+            bottom:0;
+            left: 0;
+            width:100%;
+            height:90px;
+            line-height: 90px;
+            text-align: center;
+            z-index: 2;
+        }
+        .f-bottom-btn{
+            display: inline-block;
+            position: fixed;
+            bottom:19px;
+            padding: 0 110px 0 110px;
+            font-size: 24px;
+            color: #FFFFFF;
+            background-color: #e05012;
+            border-radius: 50px;
+            height: 52px;
+            line-height: 52px;
+            z-index: 3;
+        }
+        .poster-bg{
+            z-index: -98;background: url('../images/data_poster_bg.png');
+        }
+        .f-bg-mask-game{
+            z-index: -99;
+        }
+        .f-border{
+            border: 1px solid #DADADA;
+        }
+        .swiper-button-prev{
+            background-image: url("../images/jt-next.png");
+            right: 1px;
+            left: auto;
+        }
+        .swiper-button-next{
+            background-image: url("../images/jt-prev.png");
+            left: 1px;
+            right: auto;
+        }
+        .f-ly-mask-game{
+            position: fixed;
+            top:0;
+            left: 0;
+            width:100%;
+            height:100%;
+            text-align: center;
+        }
+
+        .f-game-down-scan{
+            display: inline-block;
+            position: fixed;
+            top: 542px;
+            height: 132px;
+            width: 132px;
+            z-index: 3;
+        }
+        .f-game-down-scan img{
+            height: 132px;
+            width: 132px;
+        }
+        .f-game-down-text{
+            top: 676px;
+        }
+    </style>
+</head>
+<body class="">
+<div class="f-ly-init"></div>
+<div class="f-ly-mask-game f-bg-mask-game"></div>
+<div class="f-ly-mask-game poster-bg"></div>
+<div class="f-ly-banner">
+    <img src="../images/刀塔传奇-PC(2).jpg">
+</div>
+
+<div class="f-game-down-scan">
+    <img src="../images/download-scan.png" >
+    <span class=" f-game-down-text f-ft-color-ff f-ft-size-18">扫一扫  下载游戏</span>
+</div>
+<div class="f-ly-wrap-fix" style="margin-top:-80px;">
+    <div class="f-ly-relative">
+        <img right="20" bottom="20" src="../images/游易标志.png">
+    </div>
+    <div class="f-ly-relative f-bg-ff f-border">
+        <div rid="gameIcon" col="1" left="20" top="20" bottom="20" style="height: 90px;width: 90px;overflow: hidden;">
+            <img style="height: 90px;" src="../images/daota_icon.jpg">
+        </div>
+        <div rid="gameTitle" col="2" class="" left="gameIcon>20" v="middle" >
+            <p class="f-ft-color-35 f-ft-size-28" style="line-height: 38px;">刀塔传奇</p>
+            <p class="f-ft-color-AA f-ft-size-16">
+                <span>动作卡牌</span>
+                <span>|</span>
+                <span>公测</span>
+                <span>|</span>
+                <span>241.9M</span>
+            </p>
+        </div>
+        <div left="gameTitle>40" col="3" v="middle" class="f-bg-eb f-line-fix" style="height:90px;"></div>
+
+        <div  rid="activityLabel" left="gameTitle>80" col="4" top="28"  >
+            <span  class="f-ft-size-16 f-ft-color-ff f-bg-e05012 f-radius-4 f-ly-padding-label">活动</span>
+            <span style="display: inline-block;width: 20px;"></span>
+            <span  class="f-ft-size-16 f-ft-color-35">
+                6元首充免费送(每日限1000名)
+            </span>
+        </div>
+        <div  left="gameTitle>80" col="4" top="activityLabel>28"  >
+            <span  class="f-ft-size-16 f-ft-color-ff f-bg-11bcda f-radius-4 f-ly-padding-label">优惠</span>
+            <span style="display: inline-block;width: 20px;"></span>
+            <span  class="f-ft-size-16 f-ft-color-35">
+                  游戏内所有充值6折优惠
+            </span>
+        </div>
+
+        <!--
+        <div  rid="activityLabel" left="gameTitle>80" col="4" top="28">
+            <span  class="f-ft-size-16 f-ft-color-ff f-bg-e05012 f-radius-4 f-ly-padding-label">活动</span>
+        </div>
+        <div rid="couponLabel" col="4" left="gameTitle>80" bottom="28" >
+            <span  class="f-ft-size-16 f-ft-color-ff f-bg-11bcda f-radius-4 f-ly-padding-label">优惠</span>
+        </div>
+
+        <div col="5"  left="activityLabel>20" top="28" >
+            <span  class="f-ft-size-16 f-ft-color-35">
+                6元首充免费送(每日限1000名)
+            </span>
+        </div>
+        <div col="5" left="couponLabel>20" bottom="28" >
+            <span  class="f-ft-size-16 f-ft-color-35">
+                游戏内所有充值6折优惠
+            </span>
+        </div>
+        -->
+    </div>
+    <div class="f-ly-wrap f-bg-ff" style="margin-top: 20px;">
+        <div  class="f-ly-relative f-line-b-ea" >
+             <div left="20" top="20" bottom="20" style="height: 24px;" >
+                 <span class="f-ft-size-18 f-ft-color-35" >游戏截图</span>
+             </div>
+        </div>
+
+        <div class="swiper-container swiper-container-horizontal"  >
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="../images/scree_1.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../images/scree_2.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../images/scree_1.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../images/scree_2.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../images/scree_1.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../images/scree_2.png">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+    <div debug="gamepc" class="f-ly-relative" height="0">
+            <div rid="gameDesc" top="20"  style="width: 300px;">
+                <div   class="f-ly-relative f-bg-ff">
+                    <div  rid="gameDescTitle"  left="20" right="20" class="f-ft-size-18 f-ft-color-35 " style="height: 65px;line-height: 65px;">应用详情</div>
+                    <div top="65" style="height: 1px;width: 100%;background-color: #EAEAEA;"></div>
+                    <div col="1" left="20" top="gameDescTitle>20" bottom="20" right="20" class=" f-ft-size-16 f-ft-color-AA f-txt-break" style="height:410px;overflow-y: hidden;">
+                       <p>《刀塔传奇》是我爱你，我爱你!是我爱你，我爱你!是我爱你，我爱你!是我爱你，我爱你!是我爱你，
+                        我爱你!是我爱你，我爱你!是我爱你，我爱你!是我爱你，我爱你!是我爱你，我爱你!
+                        是我爱你，我爱你!是我爱你，我爱你!是我爱你，我爱你!是我爱你，我爱你!是我爱你，我爱你!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div top="20" left="gameDesc>20"class="f-bg-ff" style="width: 704px;">
+                <div   class="f-ly-relative f-bg-ff">
+                    <div  rid="rmzyTitle"  left="20" right="20" class="f-ft-size-18 f-ft-color-35" style="height: 65px;line-height: 65px;">热门资讯</div>
+                    <div top="65" style="height: 1px;width: 100%;background-color: #EAEAEA;"></div>
+                    <div col="1" left="20" top="rmzyTitle>1"   right="20" class="" style="height:450px;overflow-y: hidden;">
+                        <div style="height: 75px;line-height: 75px;" class="f-line-b-ea f-word-ellipsis">
+                            <span  class="f-ft-size-16 f-ft-color-e05012 f-line-all-e05012 f-radius-4 f-ly-padding-label">评测</span>
+                            <span  class="f-ft-size-16  f-ft-color-35 f-word-ellipsis" style="margin-left: 20px;">应用功能强大、易学易用，随着移动设备如雨后春笋之势兴起，
+                                应用更是迎来了全盛时期。但任何事物的发展总会遇到障碍——处理复杂任务时，用户须在不同应用间切换，前后甚至要操作数次，这给应用带来了巨大的挑战。
+                                其实完全不必大费周折——如果我们单单将应用看作是服务供应商的话，就能获得不少新思路</span>
+                        </div>
+                        <div style="height: 75px;line-height: 75px;" class="f-line-b-ea f-word-ellipsis">
+                            <span  class="f-ft-size-16 f-ft-color-e05012 f-line-all-e05012 f-radius-4 f-ly-padding-label">新闻</span>
+                            <span  class="f-ft-size-16  f-ft-color-35 f-word-ellipsis" style="margin-left: 20px;">应用功能强大、易学易用，随着移动设备如雨后春笋之势兴起，
+                                应用更是迎来了全盛时期。但任何事物的发展总会遇到障碍——处理复杂任务时，用户须在不同应用间切换，前后甚至要操作数次，这给应用带来了巨大的挑战。
+                                其实完全不必大费周折——如果我们单单将应用看作是服务供应商的话，就能获得不少新思路</span>
+                        </div>
+                        <div style="height: 75px;line-height: 75px;" class="f-line-b-ea f-word-ellipsis">
+                            <span  class="f-ft-size-16 f-ft-color-e05012 f-line-all-e05012 f-radius-4 f-ly-padding-label">活动</span>
+                            <span  class="f-ft-size-16  f-ft-color-35 f-word-ellipsis" style="margin-left: 20px;">应用功能强大、易学易用，随着移动设备如雨后春笋之势兴起，
+                                应用更是迎来了全盛时期。但任何事物的发展总会遇到障碍——处理复杂任务时，用户须在不同应用间切换，前后甚至要操作数次，这给应用带来了巨大的挑战。
+                                其实完全不必大费周折——如果我们单单将应用看作是服务供应商的话，就能获得不少新思路</span>
+                        </div>
+                        <div style="height: 75px;line-height: 75px;" class="f-line-b-ea f-word-ellipsis">
+                            <span  class="f-ft-size-16 f-ft-color-e05012 f-line-all-e05012 f-radius-4 f-ly-padding-label">话题</span>
+                            <span  class="f-ft-size-16  f-ft-color-35 f-word-ellipsis" style="margin-left: 20px;">应用功能强大、易学易用，随着移动设备如雨后春笋之势兴起，
+                                应用更是迎来了全盛时期。但任何事物的发展总会遇到障碍——处理复杂任务时，用户须在不同应用间切换，前后甚至要操作数次，这给应用带来了巨大的挑战。
+                                其实完全不必大费周折——如果我们单单将应用看作是服务供应商的话，就能获得不少新思路</span>
+                        </div>
+                        <div style="height: 75px;line-height: 75px;" class="f-line-b-ea f-word-ellipsis">
+                            <span  class="f-ft-size-16 f-ft-color-e05012 f-line-all-e05012 f-radius-4 f-ly-padding-label">话题</span>
+                            <span  class="f-ft-size-16  f-ft-color-35 f-word-ellipsis" style="margin-left: 20px;">应用功能强大、易学易用，随着移动设备如雨后春笋之势兴起，
+                                应用更是迎来了全盛时期。但任何事物的发展总会遇到障碍——处理复杂任务时，用户须在不同应用间切换，前后甚至要操作数次，这给应用带来了巨大的挑战。
+                                其实完全不必大费周折——如果我们单单将应用看作是服务供应商的话，就能获得不少新思路</span>
+                        </div>
+                        <div style="height: 75px;line-height: 75px;" class=" f-word-ellipsis">
+                            <span  class="f-ft-size-16 f-ft-color-e05012 f-line-all-e05012 f-radius-4 f-ly-padding-label">攻略</span>
+                            <span  class="f-ft-size-16  f-ft-color-35 f-word-ellipsis" style="margin-left: 20px;">应用功能强大、易学易用，随着移动设备如雨后春笋之势兴起，
+                                应用更是迎来了全盛时期。但任何事物的发展总会遇到障碍——处理复杂任务时，用户须在不同应用间切换，前后甚至要操作数次，这给应用带来了巨大的挑战。
+                                其实完全不必大费周折——如果我们单单将应用看作是服务供应商的话，就能获得不少新思路</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="f-ly-wrap-fix f-ft-size-16 f-ft-color-AA" style="text-align: center;margin-top: 146px;">
+           <p>游易 2015 Copyright © 2015 Warthog. All Rights Reserved</p>
+           <p>粤ICP备15038461号   客服电话：020-8415 8553</p>
+    </div>
+
+    <div class="f-ly-wrap-fix" style="height: 110px;">&nbsp;</div>
+    <div class="f-bottom-fix f-bg-mask-game-bottom">
+
+    </div>
+
+    <a href="#">
+        <div class="f-bottom-btn">
+                <span class="f-ly-dl-btn-icon" style="background: url('../images/download.png') no-repeat; background-size: 100%;width: 28px;height: 28px;margin-right: 10px;"></span>
+                <span class="">马上下载</span>
+        </div>
+    </a>
+
+</div>
+<script src="../js/swiper.min.js"></script>
+<script>
+
+    try{
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            slidesPerView: 4,
+            paginationClickable: true,
+            spaceBetween: 20,
+            nextButton: '.swiper-button-prev',
+            prevButton: '.swiper-button-next'
+        });
+    }catch(e){
+        if(console){
+            console.log(e);
+        }
+    }
+
+    var maxW = -1;
+    // $(".swiper-slide").css("width","280");
+     $(".f-bottom-btn").css("left",Math.floor( ($(window).width() -  $(".f-bottom-btn").outerWidth())/2)  );
+     $(".f-game-down-scan").css("right",Math.floor( ($(window).outerWidth() - 1024)/2)-152 );
+    $(".f-game-down-scan").css("top",$(".f-ly-banner").height()-80+44);
+    $(".f-game-down-scan").each(function(i,o){
+        $(o).attr("oldTop",$(o).css("top"));
+    });
+    $(window).scroll(function(){
+        $(".f-game-down-scan").each(function(i,o){
+            var newTop =  parseInt($(o).attr("oldTop")) - document.body.scrollTop;
+            if( newTop <= 0 ){
+                $(o).css("top",0);
+            }else{
+                $(o).css("top",newTop);
+            }
+        });
+    });
+</script>
+</body>
+</html>

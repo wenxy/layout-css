@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>输入验证码页面</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/layout.js"></script>
+</head>
+<body>
+
+<div class="f-ly-bread-1">
+    <div class="f-ly-bread-item-1"><a href="../index.html">首页</a></div>
+    <div class="f-ly-bread-item-2"><a href="input_mobile.html">验证</a><img src="../images/bread-split-r.png" /></div>
+    <div class="f-ly-bread-item-3"><a href="#">验证码</a></div>
+    <div class="f-ly-menu-r-1"><a href="#"><img src="../images/menu-icon.png"></a></div>
+    <div class="f-ly-menu-r-2"><a href="#"><img src="../images/p-index-icon.png"></a></div>
+    <div class="f-ly-more-1" style="display: none;">
+        <ul>
+            <li class="f-vline-r-1">游戏下载</li>
+            <li class="f-vline-r-1">礼包</li>
+            <li >攻略</li>
+        </ul>
+    </div>
+</div>
+
+<div class="f-ly-wrap">
+    <div class="f-ly-title-1">
+        <span class="f-ft-title-2">短信已经发送至手机号13726759844</span>
+    </div>
+    <div class="f-ly-input-2">
+        <input class="f-input-1" type="text" placeholder="请填写短信验证码">
+        <div class="f-ly-btn-2" style="right: 16px;top: 10px;">
+            <a href="#" class="f-btn-a-2"><span class="f-ft-bt-2">重发送验证码60s</span></a>
+        </div>
+    </div>
+    <div class="f-ly-btn-1">
+        <a href="#" class="f-btn-a-1"><span class="f-ft-bt-1">下一步</span></a>
+    </div>
+</div>
+<div class="f-ly-tips-1">
+    <span class="f-ft-tips-1">验证码输入错误</span>
+</div>
+<script>
+    $(".f-btn-a-1").click(function(){
+        $(".f-ly-tips-1").show();
+        setTimeout(function(){
+            $(".f-ly-tips-1").hide()
+        },2000);
+    });
+</script>
+</body>
+</html>

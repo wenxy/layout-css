@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>游戏详情页</title>
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/beautify.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/layout.js"></script>
+     <style>
+
+         .text{
+             color: #666;
+             line-height: 22px;
+         }
+         .title{
+
+         }
+
+         .text a{
+             color: #e05012;
+         }
+
+         .label-box{
+             margin-top: 10px ;padding: 10px;width: 980px;height: 75px;
+         }
+         .label-box.scroll{
+             overflow-y: auto;
+             /* hightlight-color：高亮颜色
+              3dlight-color：三维光线颜色
+              darkshadow-color：暗影颜色
+              shadow-color：阴影颜色
+              arrow-color：箭头颜色
+              track-color：滑道颜色
+              base-color：DIV滚动条的主要颜色，其中包含滚动按钮和滚动滑块
+             */
+         }
+         .label-line{
+             padding: 0 8px;height: 25px;line-height: 25px;
+         }
+         .label-line a:hover{
+             color: #e05012;
+         }
+         .label-current{
+             color: #e05012;
+             font-weight: bold;
+         }
+         strong{
+             font-weight: bold;
+         }
+         .f-nav-act{
+             cursor: pointer;
+         }
+         </style>
+</head>
+<body style="background-color: #f4f4f4;" class="">
+<div class="f-ly-init" style="z-index: 999999;"></div>
+<div id="header" style="height: 80px;background: #FFF;" >
+    <div style="font-size: 16px;color: #353535;width: 1000px;position: relative;">
+        <div  style="position:absolute;display: inline-block;width: 187px;height: 80px;border-right: 1px solid #EAEAEA;">
+            <a href="http://youyi123.cn"><img style="padding-top: 20px;" src="../images/b-logo.png" title="游易"></a>
+        </div>
+        <ul style="margin: 0; padding: 0;position: absolute;left: 187px;display:inline-block;z-index: 300;height: 80px;line-height: 80px;">
+            <li style="list-style: none;float:left; text-align: center;border-right: 1px solid #EAEAEA;" class="headerAct">
+                <a style="padding: 0 20px; text-align: center;display:inline-block;height: 80px;"   href="http://www.internetke.com">
+                    首页
+                </a>
+            </li>
+            <li style="list-style: none;float:left;text-align: center;border-right: 1px solid #EAEAEA;" class="">
+                <a style="padding: 0 20px; text-align: center;display:inline-block;height: 80px;"    href="http://www.internetke.com">
+                    游戏下载
+                </a>
+            </li>
+        </ul>
+        <div style="right:20px;font-size: 14px;color: #353535;position:absolute;height: 80px;line-height: 80px;">
+            您好<a style="color:#265a88;cursor: pointer;">Fish</a>，欢迎来到游易！
+            <span style="color: #EAEAEA;">|</span>
+            <a style="cursor: pointer;">登录</a>
+            <span style="color: #EAEAEA;">|</span>
+            <a style="cursor: pointer;">注销</a>
+            <span style="color: #EAEAEA;">|</span>
+            <a style="cursor: pointer;">注册</a>
+        </div>
+    </div>
+</div>
+
+<div class="f-ly-wrap-fix" style="margin-top: 10px;">
+    <div class="f-ly-column" style="padding: 10px 0px;">
+        <a href="more_gonglue_pc.html">
+            <div col="255px" class="f-nav-act f-ly-relative f-radius-4 f-ft-color-ff" height="100" style="margin-right: 20px;height:100px;background: #fdb900;">
+                <div class="f-bg-mask-ff" style="height:100px;width: 235px;"></div>
+                <div rid="bigTitle" left="51" top="15" class="f-ft-size-36" style="height: 42px;width: 78px;"><strong>攻略</strong></div>
+                <div left="bigTitle>1" top="bigTitle>-26" class="f-ft-size-14" style="line-height: 15px;padding-left: 9px;border-left: 1px solid #fff;"><p>理论</p><p>兵法</p></div>
+                <div left="55" top="bigTitle>4" class="f-ft-size-14">助你游戏所向披靡</div>
+            </div>
+        </a>
+        <a href="more_news_pc.html">
+            <div col="255px" class="f-nav-act f-ly-relative f-radius-4 f-ft-color-ff" height="100" style="margin-right: 20px;height:100px;background: #04b4e6;">
+                <div class="f-bg-mask-ff" style="height:100px;width: 235px;"></div>
+                <div rid="bigTitle" left="51" top="15" class="f-ft-size-36" style="height: 42px;width: 78px;"><strong>新闻</strong></div>
+                <div left="bigTitle>1" top="bigTitle>-26" class="f-ft-size-14" style="line-height: 15px;padding-left: 9px;border-left: 1px solid #fff;"><p>最新</p><p>资讯</p></div>
+                <div left="55" top="bigTitle>4" class="f-ft-size-14">游戏新闻一览无遗</div>
+            </div>
+        </a>
+        <a href="more_huodong_pc.html">
+            <div col="255px" class="f-nav-act f-ly-relative f-radius-4 f-ft-color-ff" height="100" style="margin-right: 20px;height:100px;background: #fe7032;">
+                <div class="f-bg-mask-ff" style="height:100px;width: 235px;"></div>
+                <div rid="bigTitle" left="51" top="15" class="f-ft-size-36" style="height: 42px;width: 78px;"><strong>活动</strong></div>
+                <div left="bigTitle>1" top="bigTitle>-26" class="f-ft-size-14" style="line-height: 15px;padding-left: 9px;border-left: 1px solid #fff;"><p>参与</p><p>活动</p></div>
+                <div left="55" top="bigTitle>4" class="f-ft-size-14">精彩活动好礼相送</div>
+            </div>
+        </a>
+        <a href="more_gonggao_pc.html">
+            <div col="235px" class="f-nav-act f-ly-relative f-radius-4 f-ft-color-ff" height="100" style="height:100px;background: #1190df;">
+　                <div rid="bigTitle" left="51" top="15" class="f-ft-size-36" style="height: 42px;width: 78px;"><strong>公告</strong></div>
+                <div left="bigTitle>1" top="bigTitle>-26" class="f-ft-size-14" style="line-height: 15px;padding-left: 9px;border-left: 1px solid #fff;"><p>重要</p><p>告知</p></div>
+                <div left="55" top="bigTitle>4" class="f-ft-size-14">不容错过重要公告</div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="f-ly-wrap-fix" style="margin-top: 20px;">
+    <span class="f-ft-size-12" style="color: #999">
+        <a href="#">游戏中心</a>><a href="#">刀塔传奇</a>>公告
+    </span>
+</div>
+<!--内容-->
+<div class="f-ly-wrap-fix f-bg-ff" style="margin-top: 10px;padding: 10px;width: 980px;">
+    <div class="f-ly-relative f-line-b-ea f-bg-change-mo" style="width: 960px;padding: 10px;"  >
+        <div rid="icon" height="80"><img style="height:80px; " src="../images/daota_icon.jpg"></div>
+        <div rid="title" left="icon>20" class="f-ft-size-16 f-ft-color-35 f-word-ellipsis title">
+            <a href="#"><strong>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</strong></a>
+        </div>
+        <div rid="" left="icon>20" top="title>10" class="f-ft-size-14 f-ft-color-AA " style="width: 860px;text-align: left;">
+            <p class="text">
+                我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊
+                我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是...
+                <a href="#">[详情]</a>
+            </p>
+        </div>
+    </div>
+    <div class="f-ly-relative f-line-b-ea f-bg-change-mo" style="width: 960px;padding: 10px;"  >
+        <div rid="icon" height="80"><img style="height:80px; " src="../images/daota_icon.jpg"></div>
+        <div rid="title" left="icon>20" class="f-ft-size-16 f-ft-color-35 f-word-ellipsis title">
+            <a href="#"><strong>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</strong></a>
+        </div>
+        <div rid="" left="icon>20" top="title>10" class="f-ft-size-14 f-ft-color-AA " style="width: 860px;text-align: left;">
+            <p class="text">
+                我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊
+                我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是...
+                <a href="#">[详情]</a>
+            </p>
+        </div>
+    </div>
+    <div class="f-ly-relative f-line-b-ea f-bg-change-mo" style="width: 960px;padding: 10px;"  >
+        <div rid="icon" height="80"><img style="height:80px; " src="../images/daota_icon.jpg"></div>
+        <div rid="title" left="icon>20" class="f-ft-size-16 f-ft-color-35 f-word-ellipsis title">
+            <a href="#"><strong>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</strong></a>
+        </div>
+        <div rid="" left="icon>20" top="title>10" class="f-ft-size-14 f-ft-color-AA " style="width: 860px;text-align: left;">
+            <p class="text">
+                我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊
+                我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是...
+                <a href="#">[详情]</a>
+            </p>
+        </div>
+    </div>
+    <div class="f-ly-relative f-line-b-ea f-bg-change-mo" style="width: 960px;padding: 10px;"  >
+        <div rid="icon" height="80"><img style="height:80px; " src="../images/daota_icon.jpg"></div>
+        <div rid="title" left="icon>20" class="f-ft-size-16 f-ft-color-35 f-word-ellipsis title">
+            <a href="#"><strong>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</strong></a>
+        </div>
+        <div rid="" left="icon>20" top="title>10" class="f-ft-size-14 f-ft-color-AA " style="width: 860px;text-align: left;">
+            <p class="text">
+                我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊
+                我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是...
+                <a href="#">[详情]</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="f-ly-relative f-line-b-ea f-bg-change-mo" style="width: 960px;padding: 10px;"  >
+        <div rid="icon" height="80"><img style="height:80px; " src="../images/daota_icon.jpg"></div>
+        <div rid="title" left="icon>20" class="f-ft-size-16 f-ft-color-35 f-word-ellipsis title">
+            <a href="#"><strong>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</strong></a>
+        </div>
+        <div rid="" left="icon>20" top="title>10" class="f-ft-size-14 f-ft-color-AA  " style="width: 860px;text-align: left;">
+            <p class="text">
+                我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊 是摘要啊我是摘要啊我是摘要...
+                <a href="#">[详情]</a>
+            </p>
+        </div>
+    </div>
+    <div class="f-ly-relative f-line-b-ea f-bg-change-mo" style="width: 960px;padding: 10px;"  >
+        <div rid="icon" height="80"><img style="height:80px; " src="../images/daota_icon.jpg"></div>
+        <div rid="title" left="icon>20" class="f-ft-size-16 f-ft-color-35 f-word-ellipsis title">
+            <a href="#"><strong>我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</strong></a>
+        </div>
+        <div rid="" left="icon>20" top="title>10" class="f-ft-size-14 f-ft-color-AA  " style="width: 860px;text-align: left;">
+            <p class="text">
+                我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊
+                我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘要啊我是摘 是摘要...
+                <a href="#">[详情]</a>
+            </p>
+        </div>
+    </div>
+    <div class="page-change">
+        <a target="_self" class="btn ctrl no" href="/sgonline/huodong-3-1/"  >首页</a>
+        <a target="_self" class="btn ctrl no" href="/sgonline/huodong-3-2/"  >上一页</a>
+        <a class="btn" target="_self" href="/sgonline/huodong-3-1/"  >1</a>
+        <a class="btn" target="_self" href="/sgonline/huodong-3-2/"  >2</a>
+        <span class="btn current">3</span>
+        <a class="btn" target="_self" href="/sgonline/huodong-3-4/"  >4</a>
+        <a class="btn" target="_self" href="/sgonline/huodong-3-5/"  >5</a>
+        <a target="_self" class="btn ctrl current" href="/sgonline/huodong-3-4/" >下一页</a>
+        <a target="_self" class="btn ctrl " href="/sgonline/huodong-3-6/" >尾页</a>
+    </div>
+</div>
+
+<div class="f-ly-wrap-fix f-ft-size-12 f-ft-color-AA f-line-t-ea " style="margin-top: 50px;height:152px;text-align: center;line-height: 25px;">
+    <p>&nbsp;</p>
+    <p>游易 2015 Copyright © 2015 Warthog. All Rights Reserved</p>
+    <p>粤ICP备15038461号</p>
+</div>
+
+</body>
+<script>
+    var maxW = -1;
+    $("#header").find("li").each(function(){
+        $(this).unbind("mouseover");
+        $(this).mouseover(function(){
+            $(this).css("border-top","2px solid #e05012");
+            $(this).css("height","78");
+            $(this).find("a").css("color","#e05012");
+        });
+        $(this).mouseout(function(){
+            $(this).css("border-top","2px solid #FFFFFF");
+            $(this).css("height","78");
+            $(this).find("a").css("color","#353535");
+        });
+    });
+    $(".f-nav-act").mouseover(function(){
+        $(this).find(".f-bg-mask-ff").hide();
+    });
+    $(".f-nav-act").mouseout(function(){
+        $(this).find(".f-bg-mask-ff").show();
+    });
+
+ </script>
+</html>

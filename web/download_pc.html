@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>游戏中心</title>
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/beautify.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="../css/nivo-slider.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/jquery.nivo.slider.pack.js"></script>
+    <style>
+        a.f-btn-hover-red:hover{
+            text-decoration: none;
+            background: #cf1132;
+            border-color: #cf1132;
+            color: #ffffff;
+        }
+
+        .f-bg-mask-00{
+            background-color: #000;
+            filter:alpha(opacity=80);
+            -moz-opacity:0.8;
+            -khtml-opacity:0.8;
+            opacity:0.8;
+        }
+
+        .slideBox img{
+            width: 586px;
+            height: 228px;
+            overflow: hidden;
+        }
+
+        .f-tab-menu li a{
+            color: #aaaaaa;
+        }
+
+        .f-pop-2{
+            position: fixed;
+            margin: auto;
+            left: 50%;
+            top: 50%;
+            margin-left: -255px;
+            margin-top: -249px;
+            right: 0;
+            bottom: 0;
+            width: 510px;
+            height: 495px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            z-index: 9999;display: none;
+        }
+        .f-video-mask{
+            position: fixed;
+            top:0;
+            left: 0;
+            width:100%;
+            height:100%;
+            text-align: center;
+            z-index: 999;
+            display: none;
+        }
+        .download-button{
+            text-decoration:none;
+            border:1px solid #00d41b;
+            padding: 0.4em 2.5em;
+            color:white;
+            font-size: 14px;
+            border-radius: 16px;
+            letter-spacing: 2px;
+            background-color:#00d41b;
+            display: block;
+            text-align: center;
+        }
+
+        .headerAct{
+            border-top: 2px solid #e05012;
+            height: 78px;
+        }
+
+        .hot-link:hover .hot-font {
+            opacity: 1;
+            filter: alpha(opacity=100);
+            top: 0
+        }
+
+        .hot-link .hot-font {
+            position: absolute;
+            width: 304px;
+            height: 118px;
+            top: -100%;
+            left: 0;
+            opacity: 0;
+            filter: alpha(opacity=0)
+        }
+
+        .hot-link .hot-font .bg {
+            background: #cf1132;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 304px;
+            height: 118px;
+            opacity: .85
+        }
+
+        .hot-link .hot-font .con {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 20px 20px;
+        }
+
+        .hot-link .hot-font img {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 74px;
+            overflow: hidden;
+        }
+
+        .hot-link .hot-font .txt {
+            position: absolute;
+            top: 20px;
+            left: 116px;
+            width: 172px;
+            height: 99px;
+            overflow: hidden;
+        }
+
+        .hot-link .hot-font .txt p {
+            height: 28px;
+            color: #fff;
+            font: 14px/28px "Microsoft YaHei";
+            overflow: hidden
+        }
+
+        .hot-link .hot-font .score {
+            position: relative
+        }
+
+        .hot-link .hot-font .score span {
+            position: absolute;
+            display: block;
+            width: 90px;
+            height: 20px;
+            top: 3px;
+            left: 68px;
+            background: url(../images/star-box.png) repeat-x 0 0
+        }
+
+        .hot-link .hot-font .score em {
+            position: absolute;
+            display: block;
+            height: 100%;
+            z-index: 2;
+            width: 0;
+            left: 0;
+            top: 0;
+            background: url(../images/star.png) repeat-x 0 0
+        }
+
+        .f-turn {
+            -webkit-transition: all .3s ease-in;
+            -moz-transition: all .3s ease-in;
+            -ms-transition: all .3s ease-in;
+            -o-transition: all .3s ease-in;
+            transition: all .3s ease-in
+        }
+
+    </style>
+
+
+</head>
+<body style="background-color: #F1F1F1;" class="">
+<div class="f-ly-init" style="z-index: 999999;"></div>
+<div id="header" style="height: 80px;background: #FFF;" >
+    <div style="font-size: 16px;color: #353535;width: 1000px;position: relative;">
+        <div  style="position:absolute;display: inline-block;width: 187px;height: 80px;border-right: 1px solid #EAEAEA;">
+            <a href="http://youyi123.cn"><img style="padding-top: 20px;" src="../images/b-logo.png" title="游易"></a>
+        </div>
+        <ul style="margin: 0; padding: 0;position: absolute;left: 187px;display:inline-block;z-index: 300;height: 80px;line-height: 80px;">
+                <li style="list-style: none;float:left; text-align: center;border-right: 1px solid #EAEAEA;" class="headerAct">
+                    <a style="padding: 0 20px; text-align: center;display:inline-block;height: 80px;"   href="http://www.internetke.com">
+                        首页
+                    </a>
+                </li>
+                <li style="list-style: none;float:left;text-align: center;border-right: 1px solid #EAEAEA;" class="">
+                    <a style="padding: 0 20px; text-align: center;display:inline-block;height: 80px;"    href="http://www.internetke.com">
+                        游戏中心
+                    </a>
+                </li>
+        </ul>
+        <div style="right:20px;font-size: 14px;color: #353535;position:absolute;height: 80px;line-height: 80px;">
+            您好<a style="color:#265a88;cursor: pointer;">Fish</a>，欢迎来到游易！
+            <span style="color: #EAEAEA;">|</span>
+            <a style="cursor: pointer;">登录</a>
+            <span style="color: #EAEAEA;">|</span>
+            <a style="cursor: pointer;">注销</a>
+            <span style="color: #EAEAEA;">|</span>
+            <a style="cursor: pointer;">注册</a>
+        </div>
+    </div>
+</div>
+
+<!--第一部分banner广告-->
+<div class="f-ly-wrap-fix f-ly-margin-t-48">
+    <div style="position: relative; height:410px;">
+        <div id="slider" class="nivoSlider">
+            <a href="http://dev7studios.com"><img src="http://scalableimages.b0.upaiyun.com/0/15/11/27/c5da41b0f3cea42f.png" alt="" title="蜀山剑道" data-thumb="http://scalableimages.b0.upaiyun.com/0/15/11/27/3b0bfe56a715e15e.png"/></a>
+            <a href="http://dev7studios.com"><img src="http://scalableimages.b0.upaiyun.com/0/15/11/27/e17fa5df0638a18e.png" alt="" title="刀塔传奇" data-thumb="http://scalableimages.b0.upaiyun.com/0/15/11/27/e17fa5df0638a18e.png" /></a>
+            <a href="http://dev7studios.com"><img src="http://scalableimages.b0.upaiyun.com/0/15/11/27/6a5d1dffb0c2319a.png" alt="" title="狂神无双" data-thumb="http://scalableimages.b0.upaiyun.com/0/15/11/27/6a5d1dffb0c2319a.png" /></a>
+        </div>
+    </div>
+</div>
+
+<!--第二部分热门手游卡片-->
+<div class="f-ly-wrap-fix">
+    <span class="f-ft-size-24 f-ft-color-e05012" style="font-weight: bold;">|</span>
+    <span class="f-ft-size-24 f-ft-color-35 f-ly-padding-l-16">热门手游</span>
+</div>
+
+<div class="f-ly-wrap-fix" style="margin-top: 24px;">
+    <div class="f-ly-column" style="height: 222px;">
+        <div col="304px" class="f-bg-ff">
+            <div class="f-ly-relative">
+                <a class="f-ly-relative hot-link" href="http://www.youyi123.cn/game/detail.html?gid=21" target="_blank" style="display: block;width: 304px; height: 118px;">
+                    <img src="http://scalableimages.b0.upaiyun.com/0/15/11/26/c5c7e0fa83e95ef0.jpg" style="width: 304px;"/>
+                    <div class="hot-font f-turn">
+                        <div class="bg"></div>
+                        <div class="con">
+                            <img src="../images/download-scan.png">
+                            <div class="txt">
+                                <p class="kind">游戏类型：<span>动作卡牌</span></p>
+                                <p class="score">玩家评分：<span><em style="width: 100%;" data-star="5"></em></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div top="132" left="20" class="f-ft-size-16 f-ft-color-35" style="width: 264px; font-weight: bold;">刀塔传奇</div>
+                <div top="154" left="20" class="f-ft-size-14 f-ft-color-AA f-word-ellipsis" style="width: 264px;">《刀塔传奇》是由莉莉丝游戏开发，龙图游戏发行的一款动作卡牌手机游戏，玩家可以收集到Q版英雄，通过装备附魔、技能升级、英雄进阶提升战队战斗力。游戏继承了老一代卡牌简单明快优点，同时在战斗系统上进行了深度革新，在战斗中玩家可以手动释放大招技能，实现打断技能、击杀英雄等目标。动动手指，英雄尽在掌控!</div>
+                <div top="184" left="115" style="width: 160px;">
+                    <img src="../images/follow.png" style="width: 24px; float: left; margin-right: 4px;"/>
+                    <span class="f-ft-size-12 f-ft-color-AA " style="width: 80px; float: left; line-height: 24px;"><em>54544</em>人关注</span>
+                </div>
+                <a top="184" left="225" class="f-btn-hover-red f-turn f-ft-size-12 f-ft-color-AA f-line-all-da f-radius-12 f-ly-padding-label-mobile-mini" style="width: 50px;" href="http://www.youyi123.cn/game/detail.html?gid=2">进入官网
+                </a>
+            </div>
+        </div>
+        <div col="44px" style="height: 114px;"></div>
+        <div col="304px" class="f-bg-ff">
+            <div class="f-ly-relative">
+                <a class="f-ly-relative hot-link" href="http://www.youyi123.cn/game/detail.html?gid=21" target="_blank" style="display: block;width: 304px; height: 118px;">
+                    <img src="http://scalableimages.b0.upaiyun.com/0/15/11/27/ab0d26cec1818767.jpg" style="width: 304px;"/>
+                    <div class="hot-font f-turn">
+                        <div class="bg"></div>
+                        <div class="con">
+                            <img src="../images/download-scan.png">
+                            <div class="txt">
+                                <p class="kind">游戏类型：<span>动作卡牌</span></p>
+                                <p class="score">玩家评分：<span><em style="width: 100%;" data-star="5"></em></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div top="132" left="20" class="f-ft-size-16 f-ft-color-35" style="width: 264px; font-weight: bold;">蜀山剑道</div>
+                <div top="154" left="20" class="f-ft-size-14 f-ft-color-AA f-word-ellipsis" style="width: 264px;">2015年度梦幻仙侠手游大作《蜀山剑道》，由90后当红歌手胡夏首次游戏代言。《蜀山剑道》是首款飞行团战MMORGP，指尖体检空中团战的乐趣！多人跨服互动PK玩法爽翻天，完全开放的市场经济，让你边玩游戏边赚钱！</div>
+                <div top="184" left="115" style="width: 160px;">
+                    <img src="../images/follow.png" style="width: 24px; float: left; margin-right: 4px;"/>
+                    <span class="f-ft-size-12 f-ft-color-AA " style="width: 80px; float: left; line-height: 24px;"><em>53444</em>人关注</span>
+                </div>
+                <a top="184" left="225" class="f-btn-hover-red f-turn f-ft-size-12 f-ft-color-AA f-line-all-da f-radius-12 f-ly-padding-label-mobile-mini" style="width: 50px;" href="http://www.youyi123.cn/game/detail.html?gid=21">进入官网
+                </a>
+            </div>
+        </div>
+        <div col="44px" style="height: 114px;"></div>
+        <div col="304px" class="f-bg-ff">
+            <div class="f-ly-relative">
+                <a class="f-ly-relative hot-link" href="http://www.youyi123.cn/game/detail.html?gid=21" target="_blank" style="display: block;width: 304px; height: 118px;">
+                    <img src="http://scalableimages.b0.upaiyun.com/0/15/11/27/b95d584c7b58995d.png" style="width: 304px;"/>
+                    <div class="hot-font f-turn">
+                        <div class="bg"></div>
+                        <div class="con">
+                            <img src="../images/download-scan.png">
+                            <div class="txt">
+                                <p class="kind">游戏类型：<span>动作卡牌</span></p>
+                                <p class="score">玩家评分：<span><em style="width: 100%;" data-star="5"></em></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div top="132" left="20" class="f-ft-size-16 f-ft-color-35" style="width: 264px; font-weight: bold;">狂神无双</div>
+                <div top="154" left="20" class="f-ft-size-14 f-ft-color-AA f-word-ellipsis" style="width: 264px;">2015酷炫帮战巨制，全新帮战玩法，“玉玺争夺战”强势席卷，万人对决一触即发！让你站在武林之巅，集结最强战队，开启一统天下的征程！ 《狂神无双》由原网易梦幻西游团队成员领衔的”星辰工作室“制作发布，上架App Store首日即登顶角色类付费榜第1名，并受到98%的玩家五星好评！</div>
+                <div top="184" left="115" style="width: 160px;">
+                    <img src="../images/follow.png" style="width: 24px; float: left; margin-right: 4px;"/>
+                    <span class="f-ft-size-12 f-ft-color-AA " style="width: 80px; float: left; line-height: 24px;"><em>187644</em>人关注</span>
+                </div>
+                <a top="184" left="225" class="f-btn-hover-red f-turn f-ft-size-12 f-ft-color-AA f-line-all-da f-radius-12 f-ly-padding-label-mobile-mini" style="width: 50px;" href="http://www.youyi123.cn/game/detail.html?gid=22">进入官网
+                </a>
+            </div>
+        </div>
+        <div col="304px" class="f-bg-ff f-ly-margin-t-16">
+            <div class="f-ly-relative">
+                <a class="f-ly-relative hot-link" href="http://www.youyi123.cn/game/detail.html?gid=21" target="_blank" style="display: block;width: 304px; height: 118px;">
+                    <img src="http://scalableimages.b0.upaiyun.com/0/15/11/27/b95d584c7b58995d.png" style="width: 304px;"/>
+                    <div class="hot-font f-turn">
+                        <div class="bg"></div>
+                        <div class="con">
+                            <img src="../images/download-scan.png">
+                            <div class="txt">
+                                <p class="kind">游戏类型：<span>动作卡牌</span></p>
+                                <p class="score">玩家评分：<span><em style="width: 100%;" data-star="5"></em></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div top="132" left="20" class="f-ft-size-16 f-ft-color-35" style="width: 264px; font-weight: bold;">狂神无双</div>
+                <div top="154" left="20" class="f-ft-size-14 f-ft-color-AA f-word-ellipsis" style="width: 264px;">2015酷炫帮战巨制，全新帮战玩法，“玉玺争夺战”强势席卷，万人对决一触即发！让你站在武林之巅，集结最强战队，开启一统天下的征程！ 《狂神无双》由原网易梦幻西游团队成员领衔的”星辰工作室“制作发布，上架App Store首日即登顶角色类付费榜第1名，并受到98%的玩家五星好评！</div>
+                <div top="184" left="115" style="width: 160px;">
+                    <img src="../images/follow.png" style="width: 24px; float: left; margin-right: 4px;"/>
+                    <span class="f-ft-size-12 f-ft-color-AA " style="width: 80px; float: left; line-height: 24px;"><em>187644</em>人关注</span>
+                </div>
+                <a top="184" left="225" class="f-btn-hover-red f-turn f-ft-size-12 f-ft-color-AA f-line-all-da f-radius-12 f-ly-padding-label-mobile-mini" style="width: 50px;" href="http://www.youyi123.cn/game/detail.html?gid=22">进入官网
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="f-ly-wrap-fix " style="margin-top: 20px;height:152px;border: 1px solid #3E3E3E; background-color: #22202B;">
+    <div class="f-ly-column ">
+        <div col="30" style="margin: 40px 20px 40px 40px;height: 72px; ">
+              <div class="f-ly-relative">
+                    <div rid="scanImg" style="height: 72px;width: 72px;background-image: url('../images/download-scan.png');background-size: 72px 72px;">
+
+                    </div>
+                    <div  left="92" style="width: 50px;" >
+                        <span class="f-ft-size-14 f-ft-color-AA">游易</span>
+                    </div>
+                    <div  left="92" top="20" class="f-ft-size-14 f-ft-color-ff" style="width: 250px;" >
+                          微信<span class="f-ft-size-14 f-ft-color-AA">公众号：YOUYI123</span>
+                    </div>
+                    <div  left="92" top="45" class="f-ft-size-12 f-ft-color-AA" style="width: 250px;" >
+                       扫描立即关注
+                    </div>
+              </div>
+        </div>
+        <div col="30" style="margin: 40px 20px 40px 40px;height: 72px; ">
+            <div class="f-ly-relative">
+                <div rid="scanImg" style="height: 72px;width: 72px;">
+                    <img  style="height: 72px;width: 72px;" src="../images/download-scan.png">
+                </div>
+                <div  left="92" style="width: 50px;" >
+                    <span class="f-ft-size-14 f-ft-color-AA">游易</span>
+                </div>
+                <div  left="92" top="20" class="f-ft-size-14 f-ft-color-ff" style="width: 250px;" >
+                    QQ<span class="f-ft-size-14 f-ft-color-AA">群号：123456789</span>
+                </div>
+                <div  left="92" top="45" class="f-ft-size-12 f-ft-color-AA" style="width: 250px;" >
+                    扫描立即加群
+                </div>
+            </div>
+        </div>
+        <div col="40" style="margin: 40px 20px 40px 40px;height: 72px; ">
+            <div class="f-ly-relative">
+                <div rid="scanImg" top="0" style="height: 72px;width: 72px;">
+                    <div rid="scanImg" style="height: 72px;width: 72px;">
+                        <img  style="height: 72px;width: 72px;" src="../images/download-scan.png">
+                    </div>
+                </div>
+                <div  left="92"  class="f-ft-size-14 f-ft-color-ff" style="width: 180px;" >
+                    客服电话<span class="f-ft-size-14 f-ft-color-AA">：020-84158533</span>
+                </div>
+                <div  left="92" top="20" style="width: 200px;" >
+                    <span class="f-ft-size-14 f-ft-color-AA">BUG反馈、充值问题、建议提交</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="f-ly-wrap-fix f-ft-size-12 f-ft-color-AA over-pulse " style="margin-top: 142px;height:152px;text-align: center;line-height: 25px;">
+    <p>游易 2015 Copyright © 2015 Warthog. All Rights Reserved</p>
+    <p>粤ICP备15038461号</p>
+</div>
+
+
+<div class="f-video-mask f-bg-mask-00" style="">
+</div>
+<div class="f-video f-pop-2  f-radius-2 " style="">
+ </div>
+
+<div id="giftPaopao" style="position: fixed;display:none;z-index: 1000000;background-color: #007aff;">
+    <div style="position: relative;">
+        <div class="paopao" style="position:absolute; top: 32px;left: -209px;display: block;z-index:5555;" id="a-btn-strategy-${game?.id}-paopao">
+            <span class="bot" style="left: 208px;"></span>
+            <span class="top" style="left: 208px;"></span>
+            <table style="width: 300px; margin:10px; line-height: 20px;">
+                <tr>
+                    <a target="_blank"></a>
+                    <td style="width: 108px;">
+                        <img src="../images/download-scan.png"  style="width: 108px; height: 108px;" />
+                    </td>
+                    <td style="width: 150px;">
+                        <div>
+                            <span style="font-size:14px; color:#e05012">下载游易客户端获领取礼包！</span><br/>
+                            <span style="font-size:12px; color:#aaa">（点击下载或者扫一扫二维码下载游易客户端）</span>
+                            <div style="margin-top: 16px;">
+                                <a href="http://otherfiles.b0.upaiyun.com/app/youyi.apk" class="download-button">
+                                    点击下载
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+
+    $('#slider').nivoSlider({
+        effect: 'fade',                 // Specify sets like: 'random,fold,fade,sliceDown'
+        slices: 15,                     // For slice animations
+        boxCols: 8,                     // For box animations
+        boxRows: 4,                     // For box animations
+        animSpeed: 500,                 // Slide transition speed
+        pauseTime: 3000,                 // How long each slide will show
+        startSlide: 0,                     // Set starting Slide (0 index)
+        directionNav: false,             // Next & Prev navigation
+        controlNav: true,                 // 1,2,3... navigation
+        controlNavThumbs: true,         // Use thumbnails for Control Nav
+        pauseOnHover: true,             // Stop animation while hovering
+        manualAdvance: false,             // Force manual transitions
+        prevText: 'Prev',                 // Prev directionNav text
+        nextText: 'Next',                 // Next directionNav text
+        randomStart: false,             // Start on a random slide
+        beforeChange: function(){},     // Triggers before a slide transition
+        afterChange: function(){},         // Triggers after a slide transition
+        slideshowEnd: function(){},     // Triggers after all slides have been shown
+        lastSlide: function(){},         // Triggers when last slide is shown
+        afterLoad: function(){}         // Triggers when slider has loaded
+    });
+
+    var maxW = -1;
+
+    $(".f-play").mouseover(function(i,oo){
+        $(this).addClass("hover");
+    });
+    $(".f-play").mouseout(function(i,oo){
+        $(this).removeClass("hover");
+        //$(this).addClass("fadeOut");
+       // $(this).removeClass("fadeOut");
+       // $(this).addClass("");
+    });
+    $(".f-play").click(function(){
+        var url = $(this).attr("video-url");
+        var close=' <div class="f-video-close f-ft-size-18 f-ft-color-AA" style="text-align: right;cursor: pointer;">关闭</div>';
+        var iframe = '<iframe height=498 width=510 src="'+url+'"frameborder=0 allowfullscreen></iframe>';
+        $(".f-video-mask").show();
+        $(".f-video").show();
+        $(".f-video").html(close+iframe);
+        $(".f-video-close").click(function(){
+            $(".f-video-mask").hide();
+            $(".f-video").hide();
+            $(".f-video").html('');
+        });
+    });
+    $(".f-gift-btn").css("cursor","pointer");
+    $(".f-gift-btn").each(function(i,o){
+        $(this).unbind("mouseover");
+        $(this).mouseover(function(){
+            var top = $(this).offset().top - $(window).scrollTop() - 10;
+            var left = $(this).offset().left - $(window).scrollLeft();
+            $("#giftPaopao").show();
+            $("#giftPaopao").css("top",top);
+            $("#giftPaopao").css("left",left);
+            $("#giftPaopao").addClass("animated fadeInDown");
+        });
+        $(this).mouseout(function(){
+           //  $("#giftPaopao").addClass("animated fadeOutDown");
+            //$("#giftPaopao").hide();
+        });
+    });
+
+    $("#giftPaopao").mousemove(function(){$("#giftPaopao").show();});
+    $("#giftPaopao").mouseout(function(){$("#giftPaopao").hide();});
+    $("#downloadBtn").css("cursor","pointer");
+    $("#downloadBtn").mouseover(function(){$(this).attr("src","../images/b-down-btn-bg-act.png");});
+    $("#downloadBtn").mouseout(function(){$(this).attr("src","../images/b-down-btn-bg.png");});
+
+    $("#header").find("li").each(function(){
+        $(this).unbind("mouseover");
+        $(this).mouseover(function(){
+            $(this).css("border-top","2px solid #e05012");
+            $(this).css("height","78");
+            $(this).find("a").css("color","#e05012");
+        });
+        $(this).mouseout(function(){
+            $(this).css("border-top","2px solid #FFFFFF");
+            $(this).css("height","78");
+            $(this).find("a").css("color","#353535");
+        });
+    });
+</script>
+</body>
+</html>

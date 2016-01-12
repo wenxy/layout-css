@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>我的余额</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/layout.js"></script>
+</head>
+<body>
+<div class="f-ly-bread-1">
+    <div class="f-ly-bread-item-1"><a href="../index.html">首页</a></div>
+    <div class="f-ly-bread-item-2"><a href="#">资料修改</a><img src="../images/bread-split-r.png" /></div>
+    <div class="f-ly-menu-r-1"><a href="#"><img src="../images/menu-icon.png"></a></div>
+    <div class="f-ly-menu-r-2"><a href="#"><img src="../images/p-index-icon.png"></a></div>
+    <div class="f-ly-more-1" style="display: none;">
+        <ul>
+            <li class="f-vline-r-1">游戏下载</li>
+            <li class="f-vline-r-1">礼包</li>
+            <li >攻略</li>
+        </ul>
+    </div>
+</div>
+
+<div class="f-ly-tips-mask">
+</div>
+<div class="f-ly-tips-wrap-2">
+    <div class="f-ly-tips-2">
+        <div  class="f-ly-tips-title-1"><span>选择性别</span></div>
+        <div  class="f-ly-tips-line-1"></div>
+        <div  class="f-ly-tips-title-1 f-line-b-ea f-ft-size-16 f-ft-color-35">我是男生</div>
+        <div  class="f-ly-tips-title-1 f-ft-size-16 f-ft-color-35">我是女生</div>
+    </div>
+</div>
+<script>
+    $("body").click(function(){
+        $(".f-ly-tips-mask").hide();
+        $(".f-ly-tips-wrap-2").hide()
+    });
+</script>
+</body>
+</html>

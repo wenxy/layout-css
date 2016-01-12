@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <title>游戏详情页</title>
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/beautify.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/layout.js"></script>
+    <style>
+        body {
+            background-color: #ebebeb;
+        }
+        ::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        }
+        .f-tab-main-box {
+            border: none;
+        }
+        .f-tab-menu li {
+            text-align: center;
+        }
+        .f-tab-menu li:not(:last-child):after {
+            float: right;
+            color: #aaa;
+            content: "|";
+        }
+        .title {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 180px;
+        }
+    </style>
+
+
+</head>
+<body class="f-bg-eb" style="margin:0;padding: 0;overflow-x: hidden;">
+<div class="f-ly-init"></div>
+<div class="f-ly-wrap">
+    <div class="f-ly-relative f-bg-ff">
+        <div rid="nav1"
+             class="f-ft-size-16 f-h-48 f-lh-48 f-ft-color-35 f-word-ellipsis f-ly-padding-l-16 f-ly-padding-r-16 f-line-r-ea">
+            <a href="../index2.html" rid="logo-title" top="0" left="16">
+                首页
+            </a>
+        </div>
+        <div rid="nav2" left="nav1>16" class="f-ft-size-16 f-h-48 f-lh-48  f-word-ellipsis">
+            <a href="#">刀塔传奇资讯</a>
+        </div>
+
+        <div left="nav2>16" class="f-h-48 f-lh-48">
+            <img class="f-h-48 f-lh-48" src="../images/bread-split-r.png">
+        </div>
+        <div rid="p-icon" class="f-img-28-28" top="10" bottom="10" right="menu-icon>16">
+            <img src="../images/p-index-icon.png">
+        </div>
+        <div rid="menu-icon" class="f-img-28-28" top="10" bottom="10" right="10">
+            <img class="f-menu-click" src="../images/menu-icon.png">
+        </div>
+    </div>
+
+    <div debug="xx" class="f-ly-menu f-lh-48 f-ly-column  f-bg-ff f-ft-color-35 f-ft-size-16 f-line-t-ea"
+         style="display: none;">
+        <a href="#">
+            <div col="33" class="f-ly-inlne f-ly-txt-center"><span
+                    style="display: inline-block;height: 30px;">游戏下载</span></div>
+        </a>
+
+        <div col="1px" class="f-ly-inlne f-bg-eb" style="width: 1px;height:20px;margin:14px 0px 14px 0;"></div>
+        <a href="#">
+            <div col="33" class="f-ly-inlne f-ly-txt-center">礼包</div>
+        </a>
+
+        <div col="1px" class="f-ly-inlne f-bg-eb" style="width: 1px;height:20px;margin:14px 0px 14px 0;"></div>
+        <a href="#">
+            <div col="33" class="f-ly-inlne f-ly-txt-center">攻略</div>
+        </a>
+    </div>
+</div>
+
+<div class="f-ly-wrap">
+    <div class="f-tab" mouse-event="click">
+
+        <div class="f-ft-size-16 f-line-t-ea f-bg-ff" style="height: 49px;position: relative;">
+            <ul class="f-tab-label f-bg-ff"
+                style="overflow-y: hidden;overflow-x: scroll;height: 49px;margin-right: 50px;">
+                <li style="line-height: 49px;"><a>综合</a></li>
+                <li style="line-height: 49px;"><a>拉比克</a></li>
+                <li class="current" style="line-height: 49px;"><a>玩家原创</a></li>
+                <li style="line-height: 49px;"><a>铁面狂</a></li>
+                <li style="line-height: 49px;"><a>铁面狂</a></li>
+                <li style="line-height: 49px;"><a>铁面狂</a></li>
+                <li style="line-height: 49px;"><a>铁面狂</a></li>
+            </ul>
+            <div class="slideBox" style="width: 44px;position: absolute;top:15px;right: 0px;">
+                <img class="slide-up" src="../images/slide-up.png" width="60%;">
+                <img class="slide-down" src="../images/slide-down.png" width="60%;" style="display: none;">
+            </div>
+        </div>
+
+        <div height="44" class="f-ly-relative" style="margin: 0;padding: 0;">
+            <span left="16" top="21" class="f-ft-color-8c8a8a f-ft-size-16">最新</span>
+        </div>
+
+        <div class="f-tab-main-box f-bg-ff">
+            <div class="f-tab-main">
+                <div>
+                    <div class="f-ly-relative f-line-b-ea" style="margin: 10px;padding-top: 10px;" height="90">
+                        <div rid="icon" height="80"><img style="height:80px; " src="../images/daota_icon.jpg"></div>
+                        <div rid="title" left="icon>20" class="f-ft-size-16 f-ft-color-35 f-word-ellipsis title">
+                            <a href="#">
+                                <div class="title">
+                                    我是标题我是标题我是标题
+                                </div>
+                            </a>
+                        </div>
+                        <div rid="" left="icon>20" top="title>10" class="f-ft-size-14 f-ft-color-AA " style="text-align: left;padding-top: 10px;">
+                            <p>
+                                我是摘要啊我是摘要啊我是摘aasdfsf要啊我是...
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="f-ly-relative f-line-b-ea" style="margin:10px;" height="90">
+                        <div rid="icon" height="80"><img style="height:80px; " src="../images/daota_icon.jpg"></div>
+                        <div rid="title" left="icon>20" class="f-ft-size-16 f-ft-color-35 f-word-ellipsis title">
+                            <a href="#">
+                                <div class="title">
+                                    我是标题我是标题我题我是标..
+                                </div>
+                            </a>
+                        </div>
+                        <div rid="" left="icon>20" top="title>10" class="f-ft-size-14 f-ft-color-AA  "
+                             style="text-align: left;">
+                            <p>
+                                我是摘要啊我是摘要啊我是摘是摘要啊我是摘要啊我是摘要...
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="f-ly-relative f-line-b-ea" style="margin:10px;" height="90">
+                        <div rid="icon" height="80"><img style="height:80px; " src="../images/daota_icon.jpg"></div>
+                        <div rid="title" left="icon>20" class="f-ft-size-16 f-ft-color-35 f-word-ellipsis title">
+                            <a href="#">
+                                <div class="title">
+                                    我是标题是标题我是标题我是标题
+                                </div>
+                            </a>
+                        </div>
+                        <div rid="" left="icon>20" top="title>10" class="f-ft-size-14 f-ft-color-AA" style="text-align: left;">
+                            <p>
+                                我是摘要啊我是摘要要啊我是摘要啊我是摘要啊我是摘 是摘要...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="f-ft-size-14 f-ft-color-AA" style="text-align: center;">
+            正在加载中...
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script>
+    $(".f-tab-menu li").css("width", $(document).width() / 4);
+
+    $(".slideBox").click(function () {
+        $(".slide-up").toggle();
+        $(".slide-down").toggle();
+    });
+
+</script>
+</html>

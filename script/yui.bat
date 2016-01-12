@@ -1,0 +1,3 @@
+java -jar D:\yuic\yuicompressor-2.4.6.jar --type css --charset UTF-8 D:\gitspace\warthog-css\css\beautify.css -o D:\gitspace\warthog-css\css\beautify.min.css
+java -jar D:\yuic\yuicompressor-2.4.6.jar --type css --charset UTF-8 D:\gitspace\warthog-css\css\layout.css -o D:\gitspace\warthog-css\css\layout.min.css
+java -jar D:\yuic\yuicompressor-2.4.6.jar --type js --charset UTF-8 D:\gitspace\warthog-css\js\layout.js -o D:\gitspace\warthog-css\js\layout.min.js
